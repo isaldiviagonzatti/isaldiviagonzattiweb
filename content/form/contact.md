@@ -1,16 +1,18 @@
 ---
-date: "2019-02-25T13:38:41-06:00"
-description: Contact me!
-draft: false
-formspree_form_id: xvoyzlbl
-layout: split-right
-name: Contact Us Form
-show_poweredby_formspree: true
-show_social_links: true
-submit_button_label: Send Message
 title: Contact
+name: Contact Me
+description: "Contact me!"
+date: 2019-02-25T13:38:41-06:00
+draft: false
+url: contact
 type: form
-url: contactform
+layout: split-right # split-right or split-left
+submit_button_label: Send Message
+show_social_links: true # specify social accounts in site config
+show_poweredby_formspree: true
+# From the Integration tab in Formspree where it says Your form's endpoint is:
+# https://formspree.io/f/abcdefgh The id will be "abcdefgh"" 
+formspree_form_id: "xvoyzlbl"
 ---
 
 ** Contact page don't contain a body, just the front matter above.
