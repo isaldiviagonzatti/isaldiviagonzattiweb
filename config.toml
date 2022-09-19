@@ -116,7 +116,7 @@ enableEmoji = true
   [[menu.header]]
     name = "About"
     title = "About Ignacio"
-    url = ""
+    url = "/about/"
     weight = 2
   [[menu.header]]
     name = "Resumé"
