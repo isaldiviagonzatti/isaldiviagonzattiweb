@@ -2,7 +2,7 @@
 title: "Test"
 subtitle: "Test"
 excerpt: "Test"
-date: 2022-10-01
+date: 2022-07-01
 author: "Ignacio Saldivia Gonzatti"
 draft: false
 tags:
