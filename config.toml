@@ -32,7 +32,7 @@ enableEmoji = true
   description = "A modern, beautiful, and easily configurable blog theme for Hugo."
   favicon = "/img/favicon.png"
   logo = "/img/favicon.png"
-  mainSections = ["blog", "project"]
+  mainSections = ["about","blog", "project"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -109,20 +109,25 @@ enableEmoji = true
 [menu]
   # Configure header 
   [[menu.header]]
+    name = "Homepage"
+    title = "Homepage"
+    url = "https://www.isaldiviagonzatti.nl/"
+    weight = 1
+  [[menu.header]]
     name = "About"
     title = "About Ignacio"
     url = "/about/"
-    weight = 1
+    weight = 2
   [[menu.header]]
     name = "Resumé"
     title = "Resumé"
     url = "/resume/"
-    weight = 2
+    weight = 3
   [[menu.header]]
     name = "Projects"
     title = "Project Portfolio"
     url = "/project/"
-    weight = 3
+    weight = 4
 
     
   # Configure footer  
