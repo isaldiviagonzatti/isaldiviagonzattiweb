@@ -1,64 +1,51 @@
 ---
-title: "Bakeoff"
-subtitle: "An R Package"
-excerpt: "This theme has a form-to-email feature built in, thanks to the simple Formspree integration. All you need to activate the form is a valid recipient email address saved in the form front matter."
-date: 2019-07-01
-author: "Eric Anderson"
+title: "Test"
+subtitle: "Test"
+excerpt: "Test"
+date: 2022-10-01
+author: "Ignacio Saldivia Gonzatti"
 draft: false
 tags:
-  - hugo-site
 categories:
-  - Theme Features
+  - Python
+  - Climate
   - R
-  - package
-layout: single
+  - Econometrics
+  - DataViz
+layout: single-sidebar #single
 links:
 - icon: door-open
   icon_pack: fas
-  name: website
-  url: https://bakeoff.netlify.com/
+  name: test
+  url: https://github.com/isaldiviagonzatti
 - icon: github
   icon_pack: fab
-  name: code
-  url: https://github.com/apreshill/bakeoff
+  name: Code
+  url: https://github.com/isaldiviagonzatti
 ---
 
-![Formspree Logo](formspree-logo.png)
+![Test](Test)
 
-## [Formspree](https://formspree.io) makes it easy to receive submissions from HTML forms on your static website.
+## [Test](Test) Test
 
 ---
 
-### Functional Form
+### Test
 
-This theme has a **form-to-email** feature built in, thanks to the simple Formspree integration. All you need to activate the form is a valid recipient email address saved in the front matter of the form
-(`/content/forms/contact.md`). Of course, the example shown below (`your@email.here`) must not be used. Please use your actual email address.
-
-```toml
-# please replace with a valid Formspree form id or email address
-formspree_form_id: your@email.here
-```
-
-Update that file and you're ready to begin receiving submissions. Just submit
-the active form for the first time, and complete the email address verification
-step with Formspree, and your contact form is live. The next time someone
-fills it out, the submission will land in your inbox.
-
-### Multiple Layouts
-
-The files included with the theme have a contact page ready for copy/paste, or
-you can type `hugo new forms/contact.md` and you're off to the races. There are two
-layouts for `forms` – `split-right`, and `split-left` – you guessed it, one puts
-the form on the right and the other on the left. You just fill out the front
-matter, and the rest is automatic.
+Test
 
 ```toml
-# layout options: split-right or split-left
-layout: split-right
+# Test
 ```
 
-![Contact Form Split Right Layout Screenshot](built-in-contact-form-screenshot.png)
+Test
 
-Both layouts display the page title and description opposite the form, and you
-can also choose to show your social icon links if you have those configured in
-the `config.toml` file.
+### Test
+
+Test
+
+```toml
+# Test
+```
+
+Test
