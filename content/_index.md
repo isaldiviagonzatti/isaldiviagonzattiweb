@@ -3,7 +3,7 @@ action_label: MORE ABOUT ME &rarr;
 action_link: /about
 action_type: text
 description: |
-    Hey, there. My name is Ignacio.<br>I am an Environmental & Climate Economics MSc student at<br><a href='https://www.wur.nl/' target='_blank'>Wageningen University & Research</a>.<br> \nIn case you are wondering, that's **Otto** in the picture, say hi!
+    Hey, there. My name is Ignacio.<br>I am an Environmental & Climate Economics MSc student at<br><a href='https://www.wur.nl/' target='_blank'>Wageningen University & Research</a>.<br> In case you are wondering, that's **Otto** in the picture, say hi!
 image_left: true
 images:
 - img/ottofrombelow.jpg
