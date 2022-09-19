@@ -11,7 +11,7 @@ title: Résumé
 <center>
   <body>
     <iframe 
-    src="Academic_CV_ISG.pdf#toolbar=1" width="100%" height="500px">
+    src="Resume_Ignacio_website.pdf#toolbar=1" width="100%" height="500px">
     </iframe>
   </body>
 </html>
