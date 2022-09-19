@@ -8,7 +8,7 @@ image_left: true
 images:
 - img/ottofrombelow.jpg
 show_action_link: true
-show_social_links: trueT
+show_social_links: true
 subtitle: Saldivia Gonzatti
 text_align_left: false
 title: Ignacio 
