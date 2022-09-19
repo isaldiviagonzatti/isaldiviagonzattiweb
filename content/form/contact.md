@@ -1,7 +1,7 @@
 ---
 title: Contact
 name: Contact Me
-description: "Contact me!"
+description: "Interested in working together? Questions about my projects? Or about life? Send me a message and I will be happy to chat, or grab a coffee if possible."
 date: 2019-02-25T13:38:41-06:00
 draft: false
 url: contact
