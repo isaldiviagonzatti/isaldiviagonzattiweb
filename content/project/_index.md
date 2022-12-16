@@ -9,7 +9,7 @@ cascade:
     text_link_label: View all projects
     text_link_url: /project/
 description: This porfolio includes openly available material I have created, contributed to, or designed.
-layout: list-grid
+layout: list #list-grid
 show_author_byline: true
 show_button_links: false
 show_post_date: false
