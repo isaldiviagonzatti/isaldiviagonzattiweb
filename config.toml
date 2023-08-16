@@ -1,4 +1,4 @@
-baseURL = "https://www.isaldiviagonzatti.nl/"
+baseURL = "https://www.ignaciosg.com/"
 theme = "hugo-apero"
 languageCode = "en"
 title = "Hi, I'm Ignacio"
@@ -111,7 +111,7 @@ enableEmoji = true
   [[menu.header]]
     name = "Homepage"
     title = "Homepage"
-    url = "https://www.isaldiviagonzatti.nl/"
+    url = "/"
     weight = 1
   [[menu.header]]
     name = "About"
