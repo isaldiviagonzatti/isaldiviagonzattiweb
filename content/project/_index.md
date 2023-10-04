@@ -9,7 +9,7 @@ cascade:
     text_link_label: View all projects
     text_link_url: /project/
 description: This porfolio includes openly available material I have created, contributed to, or designed.
-layout: list #list-grid
+layout: list-grid #list-grid
 show_author_byline: true
 show_button_links: false
 show_post_date: false
@@ -25,4 +25,4 @@ sidebar:
 title: Projects
 ---
 
-** No content for the project index. This file provides front matter for the blog including the layout and boolean options. **
+**No content for the project index. This file provides front matter for the blog including the layout and boolean options.**
