@@ -6,6 +6,50 @@
     <description>Recent content in Categories on Hi, I&#39;m Ignacio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Ignacio Saldivia Gonzatti</copyright><atom:link href="https://www.ignaciosg.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Ignacio Saldivia Gonzatti</copyright>
+    <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.ignaciosg.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Circular Bioeconomy</title>
+      <link>https://www.ignaciosg.com/categories/circular-bioeconomy/</link>
+      <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.ignaciosg.com/categories/circular-bioeconomy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Optimization</title>
+      <link>https://www.ignaciosg.com/categories/optimization/</link>
+      <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.ignaciosg.com/categories/optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://www.ignaciosg.com/categories/python/</link>
+      <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.ignaciosg.com/categories/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Waste Management</title>
+      <link>https://www.ignaciosg.com/categories/waste-management/</link>
+      <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.ignaciosg.com/categories/waste-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Econometrics</title>
+      <link>https://www.ignaciosg.com/categories/econometrics/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ignaciosg.com/categories/econometrics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Urban Economics</title>
+      <link>https://www.ignaciosg.com/categories/urban-economics/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ignaciosg.com/categories/urban-economics/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

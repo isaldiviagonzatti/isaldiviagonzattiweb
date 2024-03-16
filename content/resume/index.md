@@ -6,7 +6,7 @@ show_title_as_headline: true
 title: Résumé
 ---
 
-## Academic Résumé
+<!-- ## Résumé -->
 
 <p align="center"><a href="saldiviaGonzatti_cv_academic.pdf" download="saldiviaGonzatti_cv_academic">
 <button class="btn"> Download in PDF <i class="fa fa-download"></i></button></a> <p>
@@ -25,7 +25,7 @@ title: Résumé
 
 ---
 
-## Business Résumé
+<!-- ## Business Résumé
 
 <p align="center"><a href="saldiviaGonzatti_cv_business.pdf" download="saldiviaGonzatti_cv_business">
 <button class="btn"> Download in PDF <i class="fa fa-download"></i></button></a> <p>
@@ -37,4 +37,4 @@ title: Résumé
     </iframe>
   </body>
 </html>
-</center>
+</center> -->
