@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Hi, I&#39;m Ignacio</title>
+    <link>https://www.ignaciosg.com/project/</link>
+    <description>Recent content in Projects on Hi, I&#39;m Ignacio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Ignacio Saldivia Gonzatti</copyright>
+    <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.ignaciosg.com/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MSc Thesis: Study of the Current State of Pineapple Leaves Valorisation in the Context of Circular Bioeconomy in Costa Rica</title>
+      <link>https://www.ignaciosg.com/project/thesismsc/</link>
+      <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.ignaciosg.com/project/thesismsc/</guid>
+      <description>I conducted my MSc thesis at the Environmental Economics and Natural Resources Group at Wageningen University &amp;amp; Research supervised by prof. Francisco Alpizar Rodriguez. I did fieldwork in Costa Rica, where I interviewed pineapple farmers, researchers, and government officials. I studied the current state of pineapple leaves valorisation in Costa Rica, analysed the barriers preventing the adoption of valorisation processes and the transition to a circular bioeconomy, and proposed a Faciliy Location Problem optimization model to improve the current situation.</description>
+    </item>
+    <item>
+      <title>Publication: Factors influencing the rate of sorted solid waste collection: An empirical analysis towards local management in Catalonia (NE Spain)</title>
+      <link>https://www.ignaciosg.com/project/cities/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ignaciosg.com/project/cities/</guid>
+      <description>This publication originated from my BSc thesis, which I improved with the help of my supervisors to produce this article. It was accepted for publication in the journal Cities Abstract A study of the factors influencing waste sorting behaviours is crucial to assess the current urban waste management schemes and to determine additional, appropriate policies to put in place. While there exist many theoretical considerations on which factors determine the Sorted Municipal Solid Waste Collection (SMSWC) rates, these are sometimes ambiguous, and firm empirical confirmation is often lacking.</description>
+    </item>
+  </channel>
+</rss>
