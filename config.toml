@@ -1,7 +1,7 @@
 baseURL = "https://www.ignaciosg.com/"
 theme = "hugo-apero"
 languageCode = "en"
-title = "Hi, I'm Ignacio"
+title = "Ignacio Saldivia Gonzatti"
 author = "Ignacio Saldivia Gonzatti"
 copyright = "Ignacio Saldivia Gonzatti" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
