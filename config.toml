@@ -30,7 +30,7 @@ enableEmoji = true
   orgName = "RStudio"
   orgLocal = "Anywhere"
   description = "A modern, beautiful, and easily configurable blog theme for Hugo."
-  favicon = "/img/favicon.png"
+  favicon = "/img/favicon.jpg"
   logo = ""
   mainSections = ["about","blog", "project", "contact"]
   navallcaps = true
@@ -40,7 +40,7 @@ enableEmoji = true
   socialInFooter = true
   # Default image for social sharing and search engines. 
   # Place image file in `static` folder and specify image name here.
-  sharing_image = "/img/favicon.png"
+  sharing_image = "/img/favicon.jpg"
   # Twitter username (without @). Used when a visitor shares your site on Twitter.
   twitter = "isaldiviagnztt"
   
