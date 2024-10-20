@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ignacio on Hi, I&#39;m Ignacio</title>
+    <title>Ignacio Saldivia Gonzatti</title>
     <link>https://www.ignaciosg.com/</link>
-    <description>Recent content in Ignacio on Hi, I&#39;m Ignacio</description>
+    <description>Recent content on Ignacio Saldivia Gonzatti</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Ignacio Saldivia Gonzatti</copyright>
     <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.ignaciosg.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>MSc Thesis: Study of the Current State of Pineapple Leaves Valorisation in the Context of Circular Bioeconomy in Costa Rica</title>
+      <title>Publications</title>
+      <link>https://www.ignaciosg.com/publications/</link>
+      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://www.ignaciosg.com/publications/</guid>
+      <description>Projects I contributed to that have been published in peer-reviewed journals&#xA;Spenger, C., Saldivia Gonzatti, I., Kröger, L., Fleet, C. R., Voss, R., &amp;amp; Rickels, W. (2024). Strong versus weak sustainable development in the blue economy: a study of 15 EU coastal countries. npj Ocean Sustainability, 3(1), 48. 10.1038/s44183-024-00082-6&#xA;Saldivia Gonzatti, I., Jannes, G., &amp;amp; Barreal, J. (2022). Factors influencing the rate of sorted solid waste collection: An empirical analysis towards local management in Catalonia (NE Spain).</description>
+    </item>
+    <item>
+      <title>MSc Thesis</title>
       <link>https://www.ignaciosg.com/project/thesismsc/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
       <guid>https://www.ignaciosg.com/project/thesismsc/</guid>
-      <description>I conducted my MSc thesis at the Environmental Economics and Natural Resources Group at Wageningen University &amp;amp; Research supervised by prof. Francisco Alpizar Rodriguez. I did fieldwork in Costa Rica, where I interviewed pineapple farmers, researchers, and government officials. I studied the current state of pineapple leaves valorisation in Costa Rica, analysed the barriers preventing the adoption of valorisation processes and the transition to a circular bioeconomy, and proposed a Faciliy Location Problem optimization model to improve the current situation.</description>
-    </item>
-    <item>
-      <title>Publication: Factors influencing the rate of sorted solid waste collection: An empirical analysis towards local management in Catalonia (NE Spain)</title>
-      <link>https://www.ignaciosg.com/project/cities/</link>
-      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.ignaciosg.com/project/cities/</guid>
-      <description>This publication originated from my BSc thesis, which I improved with the help of my supervisors to produce this article. It was accepted for publication in the journal Cities Abstract A study of the factors influencing waste sorting behaviours is crucial to assess the current urban waste management schemes and to determine additional, appropriate policies to put in place. While there exist many theoretical considerations on which factors determine the Sorted Municipal Solid Waste Collection (SMSWC) rates, these are sometimes ambiguous, and firm empirical confirmation is often lacking.</description>
+      <description>I conducted my MSc thesis at the Environmental Economics and Natural Resources Group at Wageningen University &amp;amp; Research. I did fieldwork in Costa Rica, where I interviewed pineapple farmers, researchers, and government officials. I studied the current state of pineapple leaves valorisation in Costa Rica, analyzed the barriers preventing the adoption of valorisation processes and the transition to a circular bioeconomy, and proposed a Facility Location Problem optimization model to improve the current situation.</description>
     </item>
     <item>
       <title>Contact</title>
@@ -38,6 +38,13 @@
       <description>Font Sizes A A A A A A A A 6rem&#xA;(96px) 5rem&#xA;(80px) 3rem&#xA;(48px) 2.25rem&#xA;(36px) 1.5rem&#xA;(24px) 1.25rem&#xA;(20px) 1rem&#xA;(16px) .875rem&#xA;(14px) Type Samples Head&amp;shy;line Sub&amp;shy;head&amp;shy;line Level 1 Heading One page to rule them all...well, not really. This page displays sample typography and page elements to illustrate their style. Things like headings and paragraphs showing the beautiful type scale, form elements, tabular data, and image layouts just to name a few.</description>
     </item>
     <item>
+      <title></title>
+      <link>https://www.ignaciosg.com/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.ignaciosg.com/resume/</guid>
+      <description> Download in PDF </description>
+    </item>
+    <item>
       <title>Contributors</title>
       <link>https://www.ignaciosg.com/contributors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -50,13 +57,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.ignaciosg.com/license/</guid>
       <description>All my posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.</description>
-    </item>
-    <item>
-      <title>Résumé</title>
-      <link>https://www.ignaciosg.com/resume/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.ignaciosg.com/resume/</guid>
-      <description> Download in PDF </description>
     </item>
   </channel>
 </rss>

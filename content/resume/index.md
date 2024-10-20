@@ -3,13 +3,30 @@ description: Résumé of Ignacio Saldivia Gonzatti
 draft: false
 layout: standard #wide-body
 show_title_as_headline: true
-title: Résumé
+title:
 ---
 
-<!-- ## Résumé -->
+<style>
+.minimal-btn {
+    background: none;
+    border: none;
+    color: #007bff; /* Change to your desired color */
+    text-decoration: underline;
+    font-size: 16px; /* Adjust size as needed */
+    cursor: pointer;
+    padding: 0;
+}
 
-<p align="center"><a href="saldiviaGonzatti_cv_academic.pdf" download="saldiviaGonzatti_cv_academic">
-<button class="btn"> Download in PDF <i class="fa fa-download"></i></button></a> <p>
+.minimal-btn:hover {
+    color: #0056b3; /* Change color on hover */
+}
+</style>
+
+<p align="center">
+    <a href="saldiviaGonzatti_cv_academic.pdf" download="saldiviaGonzatti_cv_academic" class="minimal-btn">
+        Download in PDF <i class="fa fa-download"></i>
+    </a>
+</p>
 
 <center>
   <body>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Optimization on Hi, I&#39;m Ignacio</title>
+    <title>Optimization on Ignacio Saldivia Gonzatti</title>
     <link>https://www.ignaciosg.com/categories/optimization/</link>
-    <description>Recent content in Optimization on Hi, I&#39;m Ignacio</description>
+    <description>Recent content in Optimization on Ignacio Saldivia Gonzatti</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Ignacio Saldivia Gonzatti</copyright>
     <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.ignaciosg.com/categories/optimization/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>MSc Thesis: Study of the Current State of Pineapple Leaves Valorisation in the Context of Circular Bioeconomy in Costa Rica</title>
+      <title>MSc Thesis</title>
       <link>https://www.ignaciosg.com/project/thesismsc/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
       <guid>https://www.ignaciosg.com/project/thesismsc/</guid>
-      <description>I conducted my MSc thesis at the Environmental Economics and Natural Resources Group at Wageningen University &amp;amp; Research supervised by prof. Francisco Alpizar Rodriguez. I did fieldwork in Costa Rica, where I interviewed pineapple farmers, researchers, and government officials. I studied the current state of pineapple leaves valorisation in Costa Rica, analysed the barriers preventing the adoption of valorisation processes and the transition to a circular bioeconomy, and proposed a Faciliy Location Problem optimization model to improve the current situation.</description>
+      <description>I conducted my MSc thesis at the Environmental Economics and Natural Resources Group at Wageningen University &amp;amp; Research. I did fieldwork in Costa Rica, where I interviewed pineapple farmers, researchers, and government officials. I studied the current state of pineapple leaves valorisation in Costa Rica, analyzed the barriers preventing the adoption of valorisation processes and the transition to a circular bioeconomy, and proposed a Facility Location Problem optimization model to improve the current situation.</description>
     </item>
   </channel>
 </rss>
