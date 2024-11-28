@@ -6,9 +6,9 @@ layout: single #single
 draft: false
 tags:
 links:
-- icon: github
+- icon: globe
   icon_pack: fab
-  name: Code
+  name: SAFE4ALL Africa website
   url: https://www.safe4allafrica.eu/understanding-hydro-climatic-impacts-on-crops-and-hydrology-the-lpjml-model/
 ---
 
