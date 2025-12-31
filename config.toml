@@ -127,10 +127,15 @@ enableEmoji = true
     title = "Publications"
     url = "/publications/"
     weight = 4
+#  [[menu.header]]
+#    name = "Projects"
+#    title = "Project Portfolio"
+#    url = "/project/"
+#    weight = 5
   [[menu.header]]
-    name = "Projects"
-    title = "Project Portfolio"
-    url = "/project/"
+    name = "Anthology"
+    title = "Anthology"
+    url = "/anthology/"
     weight = 5
   [[menu.header]]
     name = "Contact"

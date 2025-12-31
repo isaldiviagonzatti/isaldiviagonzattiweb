@@ -1,0 +1,164 @@
+{{ define "main" }}
+<main class="page-main pa4" role="main">
+  <section class="page-content mw8 center">
+
+    <!-- Page Title -->
+    <header class="page-header bb b--black-10 bw1 pb4 mb5">
+      <h1 class="f2 f1-m f-headline-l fw5-ns mv4 lh-solid tracked-tight-ns db">{{ .Title }}</h1>
+      {{ with .Content }}
+      <div class="pt2 f4 measure-wide lh-copy">{{ . | markdownify }}</div>
+      {{ end }}
+    </header>
+
+    <!-- Filter Section -->
+    <div class="filter-section mb4 pa3 bg-near-white br3">
+      <div class="flex flex-wrap items-center">
+        <label for="author-filter" class="f5 fw6 mr3 mb2">Filter by author:</label>
+        <select id="author-filter" class="f5 pa2 br2 ba b--black-20 mr3 mb2">
+          <option value="">All Authors</option>
+          {{ $authors := slice }}
+          {{ range .Pages }}
+            {{ range .Params.authors }}
+              {{ $authors = $authors | append . }}
+            {{ end }}
+          {{ end }}
+          {{ range ($authors | uniq | sort) }}
+          <option value="{{ . }}">{{ . }}</option>
+          {{ end }}
+        </select>
+        <span id="result-count" class="f6 gray mb2"></span>
+      </div>
+    </div>
+
+    <!-- Anthology Notes -->
+    <div id="anthology-container">
+      {{ range .Pages }}
+      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="{{ delimit .Params.authors "," }}">
+        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+          <div class="flex items-start justify-between">
+            <div class="flex-auto">
+              <h3 class="f4 fw6 mv0 dark-gray">{{ .Title }}</h3>
+              <p class="f5 mv2 gray i">
+                {{ if gt (len .Params.authors) 1 }}
+                  by {{ delimit .Params.authors ", " " & " }}
+                {{ else }}
+                  by {{ index .Params.authors 0 }}
+                {{ end }}
+              </p>
+            </div>
+            <span class="expand-icon ml3 f4 gray">▼</span>
+          </div>
+        </summary>
+
+        <div class="content pa3 pt0 bt b--black-10">
+          <div class="anthology-content f5 lh-copy measure-wide">
+            {{ .Content }}
+          </div>
+          {{ if or .Params.work .Params.year }}
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            {{ if .Params.work }}
+            <p class="mv1"><strong>Work:</strong> {{ .Params.work }}</p>
+            {{ end }}
+            {{ if .Params.year }}
+            <p class="mv1"><strong>Year:</strong> {{ .Params.year }}</p>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </details>
+      {{ end }}
+    </div>
+
+    <!-- No Results Message -->
+    <div id="no-results" class="dn pa4 tc gray">
+      <p class="f4">No notes found for the selected author.</p>
+    </div>
+
+  </section>
+</main>
+
+<!-- Custom Styles and JavaScript -->
+<style>
+  .anthology-item summary {
+    list-style: none;
+    user-select: none;
+  }
+
+  .anthology-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .anthology-item[open] .expand-icon {
+    transform: rotate(180deg);
+  }
+
+  .expand-icon {
+    transition: transform 0.2s ease;
+    font-size: 0.8em;
+  }
+
+  .anthology-content {
+    white-space: pre-wrap;
+  }
+
+  .anthology-item {
+    transition: box-shadow 0.2s ease;
+  }
+
+  .anthology-item:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .anthology-item.hidden {
+    display: none !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterSelect = document.getElementById('author-filter');
+    const anthologyItems = document.querySelectorAll('.anthology-item');
+    const resultCount = document.getElementById('result-count');
+    const noResults = document.getElementById('no-results');
+
+    function updateResultCount(count) {
+      if (filterSelect.value === '') {
+        resultCount.textContent = `Showing all ${count} notes`;
+      } else {
+        resultCount.textContent = `Showing ${count} ${count === 1 ? 'note' : 'notes'}`;
+      }
+    }
+
+    function filterNotes() {
+      const selectedAuthor = filterSelect.value.toLowerCase();
+      let visibleCount = 0;
+
+      anthologyItems.forEach(item => {
+        const authors = item.dataset.authors.toLowerCase();
+
+        if (selectedAuthor === '' || authors.includes(selectedAuthor)) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      // Show/hide no results message
+      if (visibleCount === 0) {
+        noResults.classList.remove('dn');
+      } else {
+        noResults.classList.add('dn');
+      }
+
+      updateResultCount(visibleCount);
+    }
+
+    // Initialize count
+    updateResultCount(anthologyItems.length);
+
+    // Add event listener to filter
+    filterSelect.addEventListener('change', filterNotes);
+  });
+</script>
+{{ end }}
