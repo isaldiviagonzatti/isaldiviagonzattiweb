@@ -3,7 +3,7 @@ title: Nigth
 authors:
 - Anne Brontë
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 I love the silent hour of night,  

@@ -3,7 +3,7 @@ title: Deep Thoughts at Ulta Beauty
 authors:
 - Sasha Pearl
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 I went to Ulta Beauty to buy perfume

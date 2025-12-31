@@ -1,9 +1,9 @@
 ---
-title: Silencio by Neruda
+title: Silencio
 authors:
 - Pablo Neruda
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 Yo que crecí dentro de un árbol  

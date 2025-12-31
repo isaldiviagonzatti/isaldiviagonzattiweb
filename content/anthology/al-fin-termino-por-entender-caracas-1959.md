@@ -3,7 +3,7 @@ title: Al fin termino por entender  (Caracas, 1959)
 authors:
 - Rafael Arraiz Lucca
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 Al fin termino por entender  

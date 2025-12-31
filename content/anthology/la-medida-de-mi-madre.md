@@ -3,7 +3,7 @@ title: LA MEDIDA DE MI MADRE
 authors:
 - Begoña Abad
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 No sé si lo he dicho:

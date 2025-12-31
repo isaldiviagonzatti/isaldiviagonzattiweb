@@ -3,7 +3,7 @@ title: Riverbank
 authors:
 - CHI LECHUAN
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 (Translated from the Chinese)

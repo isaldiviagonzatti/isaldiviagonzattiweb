@@ -3,7 +3,7 @@ title: The Mango
 authors:
 - Mary Oliver
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 One evening

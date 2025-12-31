@@ -3,7 +3,7 @@ title: I fear a Man of frugal Speech
 authors:
 - Emily Dickinson
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 I fear a Man of frugal Speech—

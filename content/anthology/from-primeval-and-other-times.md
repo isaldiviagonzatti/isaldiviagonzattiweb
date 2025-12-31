@@ -3,7 +3,7 @@ title: From Primeval and Other Times
 authors:
 - Olga Tokarczuk
 date: '2025-01-01'
-type: quote
+type: book
 ---
 
 There are two kinds of learning, from

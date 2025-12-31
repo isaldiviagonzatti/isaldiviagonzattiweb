@@ -3,7 +3,7 @@ title: Los espejos
 authors:
 - Karmelo C. Iribarren
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 No los domésticos,

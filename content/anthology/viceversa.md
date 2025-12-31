@@ -3,7 +3,7 @@ title: Viceversa
 authors:
 - Mario Benedetti
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 Tengo miedo de verte  

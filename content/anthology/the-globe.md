@@ -3,7 +3,7 @@ title: The Globe
 authors:
 - Michael Collier
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 After my sons grew up and moved away,

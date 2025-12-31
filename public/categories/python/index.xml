@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Ignacio Saldivia Gonzatti</title>
-    <link>http://localhost:42727/categories/python/</link>
+    <link>http://localhost:1313/categories/python/</link>
     <description>Recent content in Python on Ignacio Saldivia Gonzatti</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Ignacio Saldivia Gonzatti</copyright>
     <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:42727/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MSc Thesis</title>
-      <link>http://localhost:42727/project/thesismsc/</link>
+      <link>http://localhost:1313/project/thesismsc/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:42727/project/thesismsc/</guid>
+      <guid>http://localhost:1313/project/thesismsc/</guid>
       <description>I conducted my MSc thesis at the Environmental Economics and Natural Resources Group at Wageningen University &amp;amp; Research. I did fieldwork in Costa Rica, where I interviewed pineapple farmers, researchers, and government officials. I studied the current state of pineapple leaves valorisation in Costa Rica, analyzed the barriers preventing the adoption of valorisation processes and the transition to a circular bioeconomy, and proposed a Facility Location Problem optimization model to improve the current situation.</description>
     </item>
   </channel>

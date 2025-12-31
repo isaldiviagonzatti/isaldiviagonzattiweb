@@ -3,7 +3,7 @@ title: Why Are Your Poems So Dark
 authors:
 - Linda Pastan
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 Isn't the moon dark too,

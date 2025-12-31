@@ -3,11 +3,11 @@ title: A veces quiero preguntarte cosas
 authors:
 - Gloria Fuertes
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 A veces quiero preguntarte cosas,
-y me intimidas tU con la mirada,
+y me intimidas tú con la mirada,
 y retorno al silencio contagiada
 del timido perfume de tus rosas.
 

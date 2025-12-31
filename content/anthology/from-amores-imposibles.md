@@ -3,7 +3,7 @@ title: From Amores imposibles
 authors:
 - Darío Jaramillo Agudelo
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 Todos los amores imposibles son eternos,

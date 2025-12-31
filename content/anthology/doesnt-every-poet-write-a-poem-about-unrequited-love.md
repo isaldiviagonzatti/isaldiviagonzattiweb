@@ -3,10 +3,13 @@ title: Doesn't Every Poet Write a Poem About Unrequited Love
 authors:
 - Mary Oliver
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
-The flowers
+
+
+
+    The flowers
             I wanted to bring you,
                 wild and wet
                     from the pale dunes

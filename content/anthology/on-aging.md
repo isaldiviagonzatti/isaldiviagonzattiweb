@@ -3,12 +3,12 @@ title: On Aging
 authors:
 - Maya Angelou
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 When you see me sitting quietly,
 Like a sack left on the shelf,
-Don't think | need your chattering.
+Don't think I need your chattering.
 I'm listening to myself.
 
 Hold! Stop! Don't pity me!
@@ -20,7 +20,7 @@ Otherwise I'll do without it!
 When my bones are stiff and aching,
 And my feet won't climb the stair,
 
-| will only ask one favor:
+I will only ask one favor:
 
 Don't bring me no rocking chair.
 When you see me walking, stumbling,
@@ -30,7 +30,7 @@ Don't study and get it wrong.
 
 And every goodbye ain't gone.
 
-I'm the same person | was back then,
+I'm the same person I was back then,
 A little less hair, a little less chin,
 
 A lot less lungs and much less wind.

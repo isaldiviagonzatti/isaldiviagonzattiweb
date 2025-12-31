@@ -1,9 +1,9 @@
 ---
-title: Silencio by Eloy Blanco
+title: Silencio
 authors:
 - Andrés Eloy Blanco
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 Cuando tú te quedes muda,

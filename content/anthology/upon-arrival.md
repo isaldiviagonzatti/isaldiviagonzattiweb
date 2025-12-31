@@ -3,7 +3,7 @@ title: Upon Arrival
 authors:
 - LENA KHALAF TUFFAHA
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 You will need to state the reason for your visit.

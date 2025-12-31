@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=42727&amp;path=livereload" data-no-instant defer></script>
+<html lang="en" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
                            
      
@@ -31,16 +31,16 @@
 <meta property="og:title" content="Anthology | Ignacio Saldivia Gonzatti">
 <meta property="og:description" content="A modern, beautiful, and easily configurable blog theme for Hugo." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:42727/anthology/" />
+<meta property="og:url" content="http://localhost:1313/anthology/" />
 <meta property="og:locale" content="en">
 
 
 
 
     
-        <meta property="og:image" content="http://localhost:42727/img/favicon.png" >
+        <meta property="og:image" content="http://localhost:1313/img/favicon.png" >
         <meta property="twitter:card" content="summary_large_image">
-        <meta name="twitter:image" content="http://localhost:42727/img/favicon.png" >
+        <meta name="twitter:image" content="http://localhost:1313/img/favicon.png" >
     
   <meta itemprop="name" content="Anthology">
 <meta itemprop="description" content="A modern, beautiful, and easily configurable blog theme for Hugo.">
@@ -50,7 +50,7 @@
   <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
   <link rel="icon" href="/img/favicon.png" type="image/x-icon">
   
-    <link rel="alternate" type="application/rss+xml" href="http://localhost:42727/anthology/index.xml" title="Ignacio Saldivia Gonzatti" />
+    <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/anthology/index.xml" title="Ignacio Saldivia Gonzatti" />
   
   
   <link rel="stylesheet" href="/style.main.min.fd99cbcfd356684a0f0150377231c2c1628b6230375e07f13bd3779bb1c77178.css" integrity="sha256-/ZnLz9NWaEoPAVA3cjHCwWKLYjA3XgfxO9N3m7HHcXg=" media="screen">
@@ -160,10 +160,10 @@
 </script>
 </head>
 <body>
-      <div class="grid-container single-sidebar">
+      <div class="grid-container list-grid">
 <header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
   <nav class="site-nav db dt-l w-100" role="navigation">
-    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="http://localhost:42727/" title="Home">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="http://localhost:1313/" title="Home">
       <span class="f4 fw7">Ignacio Saldivia Gonzatti</span>
     </a>
     <div
@@ -205,14 +205,26 @@
     <header class="page-header bb b--black-10 bw1 pb4 mb5">
       <h1 class="f2 f1-m f-headline-l fw5-ns mv4 lh-solid tracked-tight-ns db">Anthology</h1>
       
+      <div class="pt2 f4 measure-wide lh-copy">A collection of my favourite poems, excerpts from books, and other writings.</div>
+      
     </header>
 
     
-    <div class="filter-section mb4 pa3 bg-near-white br3">
+    <div class="filter-section mb4 pa3 br3">
+      <div class="flex flex-wrap items-center mb3">
+        <label for="keyword-search" class="f5 fw6 mr3 mb2">Search:</label>
+        <input
+          type="text"
+          id="keyword-search"
+          placeholder="Search by keyword..."
+          class="f5 pa2 br2 ba b--black-20 mr3 mb2 flex-auto mw5"
+        >
+        <button id="clear-search" class="f6 pa2 br2 ba b--black-20 pointer mb2 dn">Clear</button>
+      </div>
       <div class="flex flex-wrap items-center">
         <label for="author-filter" class="f5 fw6 mr3 mb2">Filter by author:</label>
         <select id="author-filter" class="f5 pa2 br2 ba b--black-20 mr3 mb2">
-          <option value="">All Authors</option>
+          <option value="">All authors</option>
           
           
             
@@ -313,14 +325,6 @@
           
             
               
-            
-              
-            
-          
-            
-              
-            
-          
             
               
             
@@ -379,8 +383,6 @@
           <option value="Anne Brontë">Anne Brontë</option>
           
           <option value="Antonin Artaud">Antonin Artaud</option>
-          
-          <option value="Author Name Here">Author Name Here</option>
           
           <option value="Begoña Abad">Begoña Abad</option>
           
@@ -447,6 +449,171 @@
           <option value="Walt Whitman">Walt Whitman</option>
           
         </select>
+
+        <label for="type-filter" class="f5 fw6 mr3 mb2">Filter by type:</label>
+        <select id="type-filter" class="f5 pa2 br2 ba b--black-20 mr3 mb2">
+          <option value="">All types</option>
+          
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+          
+          <option value="book">Book</option>
+          
+          <option value="interview">Interview</option>
+          
+          <option value="misc">Misc</option>
+          
+          <option value="poem">Poem</option>
+          
+        </select>
+
         <span id="result-count" class="f6 gray mb2"></span>
       </div>
     </div>
@@ -454,8 +621,8 @@
     
     <div id="anthology-container">
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Rubén Darío">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Rubén Darío" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">A Colón</h3>
@@ -470,7 +637,7 @@
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>¡Desgraciado Almirante! Tu pobre América,<br>
 tu india virgen y hermosa de sangre cálida,<br>
 la perla de tus sueños, es una histérica<br>
@@ -530,11 +697,19 @@ ruega a Dios por el mundo que descubriste!</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Rubén Darío</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Gloria Fuertes">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Gloria Fuertes" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">A veces quiero preguntarte cosas</h3>
@@ -549,9 +724,9 @@ ruega a Dios por el mundo que descubriste!</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>A veces quiero preguntarte cosas,
-y me intimidas tU con la mirada,
+y me intimidas tú con la mirada,
 y retorno al silencio contagiada
 del timido perfume de tus rosas.</p>
 <p>A veces quise no sofiar contigo,</p>
@@ -569,11 +744,19 @@ y al irtelo a decir mi voz no siento.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Gloria Fuertes</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Rafael Arraiz Lucca">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Rafael Arraiz Lucca" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Al fin termino por entender  (Caracas, 1959)</h3>
@@ -588,7 +771,7 @@ y al irtelo a decir mi voz no siento.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>Al fin termino por entender<br>
 que yo amo esta ciudad hasta la rabia:<br>
 es tierra y abono para la nostalgia.<br>
@@ -605,11 +788,19 @@ que la nostalgia se construya todas las quincenas.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Rafael Arraiz Lucca</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Li Bai">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Li Bai" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Bye Bye Baidi</h3>
@@ -624,14 +815,10 @@ que la nostalgia se construya todas las quincenas.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
-            <p><strong>Bye Bye Baidi, by Li Ba</strong> i</p>
-<p><strong>Here’s a tongue in cheek translation.</strong></p>
-<p>**Bye Bye Baidi, by Li Bai<br>
-下江陵<br>
-Xia Jiangling<br>
-**<br>
-A sea of colorful clouds<br>
+          <div class="anthology-content f5 lh-copy">
+            <p>(Xia Jiangling)
+(Translated from Chinese)</p>
+<p>A sea of colorful clouds<br>
 Was there to see me off,<br>
 The world awaits,<br>
 As I Li Bai,<br>
@@ -652,61 +839,23 @@ They laughed,<br>
 To see this sight,<br>
 Beneath ten thousand towering mountains<br>
 A little boat bobbing<br>
-On the mighty Yangtze<br>
-<strong>— Li Bai 李白</strong>, more or less</p>
-<p><strong>The Title</strong></p>
-<p>What’s in a name? Witter Brynner calls the title “Through the Yangzi Gorges.” Yangtze is now the accepted English spelling and there are three gorges along the Yangtze. And Baidicheng a city on the mountainside lies at the entrance. But, as you can see from the literal translation below, Li Bai called his poem <strong>Xia Jiangling</strong>, or Descending to Jiangling. Going down river to Jiangling, if one wants to stretch it out.</p>
-<p><strong>The Time</strong></p>
-<p>Li Bai’s diary consists of his poems. From them we take clues to date the when and where of each poem. This poem may have been written as early as 725 when Li Bai was in his mid-twenties. Li Bai had left his home in Sichuan province to being his days of wandering. It describes a young poet sent off in a haze of colorful clouds, sailing down the Yangtze River through Lake Dongting to Jiangling, the gateway to the North and East.</p>
-<p>I am not sure why the monkeys cried. <strong>聲 sheng</strong> could mean chatter, so maybe they engaged in idle gossip.</p>
-<p><strong>“Who is this upstart trying to make waves in such a tiny boat.”</strong></p>
-<p>In ancient Chinese poetry, mountains served as a metaphor for a long hard journey, as well as spiritual enlightenment. It’s a long, long way to fame and glory in such a tiny, little boat.</p>
-<p><strong>Descending to Jiangling</strong><br>
-Baidi, at dawn, is clothed in colorful clouds,<br>
-In one day I sailed a thousand li to Jiangling.<br>
-On the banks the monkeys spoke along the way,<br>
-While my tiny little boat passes ten thousand mountains.<br>
-— Li Bai, circa 725</p>
-<p><strong>Original Chinese text and pinyin</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>Descending to Jiangling</strong></th>
-<th><strong>下江陵</strong></th>
-<th><strong>Xià Jiānglíng</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A morning farewell to Baidi, in the thick of colorful clouds,   It takes one day to reach Jiangling, a journey of a thousand miles.</td>
-<td>朝辭白帝彩雲間，   千里江陵一日還。</td>
-<td>Cháo cí bái dì cǎiyún jiān,   qiānlǐ Jiānglíng yī rì hái.</td>
-</tr>
-<tr>
-<td>On both sides of the river the monkeys cry never stopped.   Until my tiny boat passed ten thousands mountains.</td>
-<td>兩岸猿聲啼不住，   輕舟已過萬重山。</td>
-<td>Liǎng’àn yuán shēng tí bù zhù,   qīngzhōu yǐguò wàn chóngshān.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>江陵</strong> <strong>Jiangling</strong>, the historical name of Jingzhou, Hubei province. It gets you through the Three Gorges into Central China. From there one can go North or East.</p>
-<p><strong>Bye Bye Bye</strong> is a reference to the Song by the Boy Band NSYNC, 2000. It is there for no particular reason.</p>
-<p><img src="https://100tangpoems.wordpress.com/wp-content/uploads/2024/02/fisherman.jpg?w=1000" alt="fisherman on a boat"></p>
-<p>Cháo cí Báidì cǎiyún jiān, qiānlǐ Jiānglíng yī rì hái. Bye, bye, by Baidi, hello Jiangling, hello China.</p>
-<p><img src="https://pixel.wp.com/g.gif?blog=115873500&amp;v=wpcom&amp;tz=0&amp;user_id=0&amp;post=14816&amp;subd=100tangpoems&amp;host=100tangpoems.wordpress.com&amp;ref=&amp;rand=0.318511047623504" alt=""></p>
+On the mighty Yangtze</p>
 
+          </div>
+          
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Li Bai</p>
+            
+            
+            
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Sasha Pearl">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Sasha Pearl" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Deep Thoughts at Ulta Beauty</h3>
@@ -721,7 +870,7 @@ While my tiny little boat passes ten thousand mountains.<br>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>I went to Ulta Beauty to buy perfume
 I was horny and I wanted the universe inside my nose
 The lit shelves and raised hair
@@ -748,11 +897,19 @@ I’m depressed by mankind’s infinite reach</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Sasha Pearl</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Mary Oliver">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Mary Oliver" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Doesn&#39;t Every Poet Write a Poem About Unrequited Love</h3>
@@ -767,12 +924,13 @@ I’m depressed by mankind’s infinite reach</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
-            <p>The flowers
-I wanted to bring you,
-wild and wet
-from the pale dunes</p>
-<pre><code>    and still smelling
+          <div class="anthology-content f5 lh-copy">
+            <pre><code>The flowers
+        I wanted to bring you,
+            wild and wet
+                from the pale dunes
+
+    and still smelling
         of the summer night,
             and still holding a moment or two
                 of the night cricket's
@@ -814,11 +972,19 @@ from the pale dunes</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Mary Oliver</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Mary Oliver">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Mary Oliver" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">EVERY DOG&#39;S STORY</h3>
@@ -833,7 +999,7 @@ from the pale dunes</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>I have a bed, my very own.
 It&rsquo;s just my size.
 And sometimes I like to sleep alone
@@ -849,11 +1015,19 @@ and I know it will be morning soon.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Mary Oliver</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Rupi Kaur">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Rupi Kaur" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">father, you always call to say nothing in particular.</h3>
@@ -868,16 +1042,24 @@ and I know it will be morning soon.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>father. you always call to say nothing in particular. you ask what i&rsquo;m doing or where i am and when the silence stretches like a lifetime between us i scramble to find questions to keep the conversation going. what i long to say most is. i understand this world broke you. it has been so hard on your feet. i don&rsquo;t blame you for not knowing how to remain soft with me. sometimes i stay up thinking of all the places you are hurting which you&rsquo;ll never care to mention. i come from the same aching blood. from the same bone so desperate for attention i collapse in on myself. i am your daughter. i know the small talk is the only way you know how to tell me you love me. cause it is the only way I know how to tell you.</p>
 
+          </div>
+          
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Rupi Kaur</p>
+            
+            
+            
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Darío Jaramillo Agudelo">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Darío Jaramillo Agudelo" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">From Amores imposibles</h3>
@@ -892,7 +1074,7 @@ and I know it will be morning soon.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>Todos los amores imposibles son eternos,
 el tiempo no los toca
 y no existen traiciones entre los amores imposibles.
@@ -916,11 +1098,19 @@ son perfectos los amores imposibles.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Darío Jaramillo Agudelo</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Daniel Goleman">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Daniel Goleman" data-type="book">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">From Emotional Intelligence</h3>
@@ -935,45 +1125,37 @@ son perfectos los amores imposibles.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
-            <p>&lsquo;&lsquo;Beyond this possibility looms a pressing moral imperative. These are times when the fabric of
-society seems to unravel at ever-greater speed, when selfishness, violence, and a meanness of spirit
-seem to be rotting the goodness of our communal lives. Here the argument for the importance of
-emotional intelligence hinges on the link between sentiment, character, and moral instincts. There is
-growing evidence that fundamental ethical stances in life stem from underlying emotional capacities.
-For one, impulse is the medium of emotion; the seed of all impulse is a feeling bursting to express
-itself in action. Those who are at the mercy of impulse-who lack self-control-suffer a moral
-deficiency: The ability to control impulse is the base of will and character. By the same token, the root
-of altruism lies in empathy, the ability to read emotions in others; lacking a sense of another&rsquo;s need or
-despair, there is no caring. And if there are any two moral stances that our times call for, they are
-precisely these, self-restraint and compassion.&rsquo;&rsquo;</p>
-<p>&lsquo;&lsquo;In The Nicomachean Ethics, Aristotle&rsquo;s philosophical enquiry into virtue, character, and the good
-life, his challenge is to manage our emotional life with intelligence. Our passions, when well
-exercised, have wisdom; they guide our thinking, our values, our survival. But they can easily go
-awry, and do so all too often. As Aristotle saw, the problem is not with emotionality, but with the
-appropriateness of emotion and its expression. The question is, how can we bring intelligence to our
-emotions-and civility to our streets and caring to our communal life?&rsquo;&rsquo;</p>
-<p>&ldquo;The beliefs of the rational mind are
-tentative; new evidence can disconfirm one belief and replace it with a new one—it reasons by objective evidence. The emotional mind, however, takes its beliefs to be absolutely true, and so
-discounts any evidence to the contrary. That is why it is so hard to reason with someone who is
-emotionally upset: no matter the soundness of your argument from a logical point of view, it carries
-no weight if it is out of keeping with the emotional conviction of the moment. Feelings are self-justifying, with a set of perceptions and &ldquo;proofs&rdquo; all their own.&rdquo;</p>
-<p>The Past Imposed on the Present
-&ldquo;When some feature of an event seems similar to an emotionally charged memory from the past, the
-emotional mind responds by triggering the feelings that went with the remembered event. The
-emotional mind reacts to the present as though it were the past.® The trouble is that, especially when
-the appraisal is fast and automatic, we may not realize that what was once the case is no longer so.
-Someone who has learned, through painful childhood beatings, to react to an angry scowl with intense
-fear and loathing will have that reaction to some degree even as an adult, when the scowl carries no
-such threat.&rdquo;</p>
+          <div class="anthology-content f5 lh-copy">
+            <p>&lsquo;&lsquo;Beyond this possibility looms a pressing moral imperative. These are times when the fabric of society seems to unravel at ever-greater speed, when selfishness, violence, and a meanness of spirit seem to be rotting the goodness of our communal lives. Here the argument for the importance of emotional intelligence hinges on the link between sentiment, character, and moral instincts. There is growing evidence that fundamental ethical stances in life stem from underlying emotional capacities. For one, impulse is the medium of emotion; the seed of all impulse is a feeling bursting to express itself in action. Those who are at the mercy of impulse-who lack self-control-suffer a moral deficiency: The ability to control impulse is the base of will and character. By the same token, the root of altruism lies in empathy, the ability to read emotions in others; lacking a sense of another&rsquo;s need or despair, there is no caring. And if there are any two moral stances that our times call for, they are precisely these, self-restraint and compassion.&rsquo;&rsquo;</p>
+<p>&lsquo;&lsquo;In The Nicomachean Ethics, Aristotle&rsquo;s philosophical enquiry into virtue, character, and the good life, his challenge is to manage our emotional life with intelligence. Our passions, when well exercised, have wisdom; they guide our thinking, our values, our survival. But they can easily go awry, and do so all too often. As Aristotle saw, the problem is not with emotionality, but with the appropriateness of emotion and its expression. The question is, how can we bring intelligence to our emotions-and civility to our streets and caring to our communal life?&rsquo;&rsquo;</p>
+<p>&ldquo;The beliefs of the rational mind are tentative; new evidence can disconfirm one belief and replace it with a new one—it reasons by objective evidence. The emotional mind, however, takes its beliefs to be absolutely true, and so discounts any evidence to the contrary. That is why it is so hard to reason with someone who is emotionally upset: no matter the soundness of your argument from a logical point of view, it carries no weight if it is out of keeping with the emotional conviction of the moment. Feelings are self-justifying, with a set of perceptions and &ldquo;proofs&rdquo; all their own.&rdquo;</p>
 
+
+
+
+<h2 id="the-past-imposed-on-the-present">The Past Imposed on the Present
+  <a href="#the-past-imposed-on-the-present"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>&ldquo;When some feature of an event seems similar to an emotionally charged memory from the past, the emotional mind responds by triggering the feelings that went with the remembered event. The emotional mind reacts to the present as though it were the past. The trouble is that, especially when the appraisal is fast and automatic, we may not realize that what was once the case is no longer so. Someone who has learned, through painful childhood beatings, to react to an angry scowl with intense fear and loathing will have that reaction to some degree even as an adult, when the scowl carries no such threat.&rdquo;</p>
+
+          </div>
+          
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Daniel Goleman</p>
+            
+            
+            
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Rüdiger Safranski">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Rüdiger Safranski" data-type="book">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">From Nietzsche</h3>
@@ -988,16 +1170,24 @@ such threat.&rdquo;</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>However, even &ldquo;boredom&rdquo; has its aura of mystery and is imbued with a singular pathos by Nietzsche. Boredom, from which art provides a refuge, becomes terrifying—the yawning abyss of being. When people  are bored, they regard the moment as an empty passage of time.  External events, as well as people&rsquo;s sense of self, become inconsequential. The phases of life lose their intentional tension and cave in on themselves like a soufflé removed from the oven too soon. Routines and  habits that otherwise provide stability suddenly prove to be nothing  more than façades. Finally, the eerie scenario of boredom reveals a  moment of true feeling. When people find nothing to do with themselves, nothingness besets them. Against this backdrop of nothingness,  art performs its task of self-stimulation—a virtually heroic enterprise,  because people on the verge of a breakdown need to be entertained. Art  steps in as a bridge to prevent succumbing to nihilist ennui. Art helps us  live; without it, life cannot stem the onslaught of meaninglessness.</p>
 
+          </div>
+          
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Rüdiger Safranski</p>
+            
+            
+            
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="James Baldwin">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="James Baldwin" data-type="book">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">From No Name in the Street</h3>
@@ -1012,16 +1202,24 @@ such threat.&rdquo;</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>“People pay for what they do, and still more for what they have allowed themselves to become, and they pay for it, very simply, by the lives they lead.”</p>
 
+          </div>
+          
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> James Baldwin</p>
+            
+            
+            
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Olga Tokarczuk">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Olga Tokarczuk" data-type="book">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">From Primeval and Other Times</h3>
@@ -1036,7 +1234,7 @@ such threat.&rdquo;</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>There are two kinds of learning, from
 the inside and from the outside. The
 first is regarded as the best, or even the
@@ -1064,11 +1262,19 @@ what he learns into his being.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Olga Tokarczuk</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Antonin Artaud">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Antonin Artaud" data-type="book">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">From The Theatre and Its Double</h3>
@@ -1083,7 +1289,7 @@ what he learns into his being.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>We cannot live forever surrounded by the dead and by death.</p>
 <p>And if there are still prejudices, they must be destroyed.</p>
 <p>THE DUTY</p>
@@ -1100,11 +1306,19 @@ what he learns into his being.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Antonin Artaud</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Mary Oliver">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Mary Oliver" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">I am worried</h3>
@@ -1119,7 +1333,7 @@ what he learns into his being.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>I worried a lot. Will the garden grow, will the rivers
 flow in the right direction, will the earth turn</p>
 <p>as it was taught, and if not how shall</p>
@@ -1139,11 +1353,19 @@ and sang.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Mary Oliver</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Emily Dickinson">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Emily Dickinson" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">I fear a Man of frugal Speech</h3>
@@ -1158,7 +1380,7 @@ and sang.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>I fear a Man of frugal Speech—
 I fear a Silent Man—
 Haranguer—I can overtake—
@@ -1170,11 +1392,19 @@ I fear that He is Grand</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Emily Dickinson</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Walt Whitman">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Walt Whitman" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">I sit and look out</h3>
@@ -1189,7 +1419,7 @@ I fear that He is Grand</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>| sit and look out upon all the sorrows of the world, and upon
 all oppression and shame</p>
 <p>| hear secret convulsive sobs from young men at anguish
@@ -1213,14 +1443,22 @@ looking out upon,</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Walt Whitman</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Fernando Pessoa">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Fernando Pessoa" data-type="book">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
-              <h3 class="f4 fw6 mv0 dark-gray">La inutilidad de dar consejos (O Filatelista, O Mendigo e Outros Contos )</h3>
+              <h3 class="f4 fw6 mv0 dark-gray">La inutilidad de dar consejos</h3>
               <p class="f5 mv2 gray i">
                 
                   by Fernando Pessoa
@@ -1232,16 +1470,26 @@ looking out upon,</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>Yo no aconsejo. Colecciono sellos. Para dar consejos, es necesario estar completamente seguro de que los consejos son buenos y, para eso, es necesario estar seguro (de lo que nadie en absoluto lo está) de estar en posesión de la verdad. Y luego es necesario saber si esos consejos se adaptan al individuo al que se le dan, para lo cual es necesario conocer toda su alma, lo que casi nunca es posible. Y también hay que tener en cuenta que el modo de dar consejos debe adaptarse exactamente a aquella alma; se aconsejan a veces cosas que no quieren que se hagan para que, combinadas con elementos del alma aconsejada, se obtenga el resultado que se desea. Solo la gente muy ingenua da consejos.</p>
 
+          </div>
+          
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Fernando Pessoa</p>
+            
+            
+            <p class="mv1"><strong>Work:</strong> O Filatelista. In O Mendigo e Outros Contos</p>
+            
+            
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Begoña Abad">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Begoña Abad" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">LA MEDIDA DE MI MADRE</h3>
@@ -1256,7 +1504,7 @@ looking out upon,</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>No sé si lo he dicho:
 mi madre es pequeña
 y tiene que ponerse de puntillas
@@ -1270,11 +1518,19 @@ donde podemos querernos.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Begoña Abad</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Juan Gelman">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Juan Gelman" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Lluvia</h3>
@@ -1289,7 +1545,7 @@ donde podemos querernos.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>hoy llueve mucho, mucho,<br>
 y pareciera que están lavando el mundo<br>
 mi vecino de al lado mira la lluvia<br>
@@ -1325,11 +1581,19 @@ a mi corazón desterrado/</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Juan Gelman</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Karmelo C. Iribarren">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Karmelo C. Iribarren" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Los espejos</h3>
@@ -1344,7 +1608,7 @@ a mi corazón desterrado/</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>No los domésticos,</p>
 <p>estratégicamente dispuestos</p>
 <p>para que te digan siempre</p>
@@ -1362,11 +1626,19 @@ a mi corazón desterrado/</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Karmelo C. Iribarren</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Sylvia Plath">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Sylvia Plath" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Mad Girl&#39;s Love Song</h3>
@@ -1381,7 +1653,7 @@ a mi corazón desterrado/</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>I shut my eyes and all the world drops dead;<br>
 I lift my lids and all is born again.<br>
 (I think I made you up inside my head.)</p>
@@ -1404,11 +1676,19 @@ I shut my eyes and all the world drops dead.<br>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Sylvia Plath</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Anne Brontë">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Anne Brontë" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Nigth</h3>
@@ -1423,7 +1703,7 @@ I shut my eyes and all the world drops dead.<br>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>I love the silent hour of night,<br>
 For blissful dreams may then arise,<br>
 Revealing to my charmed sight<br>
@@ -1439,11 +1719,19 @@ The darling of my heart to me.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Anne Brontë</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Maya Angelou">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Maya Angelou" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">On Aging</h3>
@@ -1458,10 +1746,10 @@ The darling of my heart to me.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>When you see me sitting quietly,
 Like a sack left on the shelf,
-Don&rsquo;t think | need your chattering.
+Don&rsquo;t think I need your chattering.
 I&rsquo;m listening to myself.</p>
 <p>Hold! Stop! Don&rsquo;t pity me!</p>
 <p>Hold! Stop your sympathy!
@@ -1469,24 +1757,32 @@ Understanding if you got it,
 Otherwise I&rsquo;ll do without it!</p>
 <p>When my bones are stiff and aching,
 And my feet won&rsquo;t climb the stair,</p>
-<p>| will only ask one favor:</p>
+<p>I will only ask one favor:</p>
 <p>Don&rsquo;t bring me no rocking chair.
 When you see me walking, stumbling,
 Don&rsquo;t study and get it wrong.</p>
 <p>‘Cause tired don’t mean lazy</p>
 <p>And every goodbye ain&rsquo;t gone.</p>
-<p>I&rsquo;m the same person | was back then,
+<p>I&rsquo;m the same person I was back then,
 A little less hair, a little less chin,</p>
 <p>A lot less lungs and much less wind.
 But ain&rsquo;t I lucky I can still breathe in.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Maya Angelou</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Susana Martínez-Conde,E. J. Rodríguez">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Susana Martínez-Conde,E. J. Rodríguez" data-type="interview">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">On altering memories</h3>
@@ -1501,7 +1797,7 @@ But ain&rsquo;t I lucky I can still breathe in.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p><strong>¿También nos engañamos con respecto a los recuerdos de nuestra propia vida?</strong></p>
 <p>Sí. Son datos que están ya demostrados científicamente. Cuando almacenamos algo en la memoria a largo plazo, la manera para recordar es extraer este recuerdo de la memoria a largo plazo y ponerlo al frente del almacenamiento a corto plazo. ¿Qué ocurre? Que cuando extraemos este recuerdo y lo situamos ahí, de repente se vuelve versátil. El propio hecho de acceder a ese recuerdo hace que lo cambies. Es decir, cuando recuerdas una vivencia que te ha ocurrido y te pones a meditar sobre ella o te pones a revivirla, cuando después la vuelves a guardar en el almacenamiento a largo plazo no es exactamente la misma. </p>
 <p><strong>La retocas siempre que la recuperas.</strong> </p>
@@ -1509,11 +1805,19 @@ But ain&rsquo;t I lucky I can still breathe in.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Authors:</strong> Susana Martínez-Conde, E. J. Rodríguez</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Umberto Eco">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Umberto Eco" data-type="misc">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">On buying and reading books</h3>
@@ -1528,7 +1832,7 @@ But ain&rsquo;t I lucky I can still breathe in.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>It is foolish to think that you have to read all the books you buy, as it is foolish to criticize those who buy more books than they will ever be able to read. It would be like saying that you should use all the cutlery or glasses or screwdrivers or drill bits you bought before buying new ones.</p>
 <p>There are things in life that we need to always have plenty of supplies, even if we will only use a small portion.</p>
 <p>If, for example, we consider books as medicine, we understand that it is good to have many at home rather than a few: when you want to feel better, then you go to the &lsquo;medicine closet&rsquo; and choose a book. Not a random one, but the right book for that moment. That&rsquo;s why you should always have a nutrition choice!</p>
@@ -1536,11 +1840,19 @@ But ain&rsquo;t I lucky I can still breathe in.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Umberto Eco</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Thomas Sankara">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Thomas Sankara" data-type="misc">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">On food aid</h3>
@@ -1555,16 +1867,56 @@ But ain&rsquo;t I lucky I can still breathe in.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>Those who come with wheat, millet, corn or milk, they are not helping us. Those who really want to help us can give us ploughs, tractors, fertilizers, insecticides, watering cans, drills and dams. That is how we would define food aid.</p>
 
+          </div>
+          
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Thomas Sankara</p>
+            
+            
+            
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Kahlil Gibran">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Benito Taibo" data-type="book">
+        <summary class="pa3 pointer br3 outline-0">
+          <div class="flex items-start justify-between">
+            <div class="flex-auto">
+              <h3 class="f4 fw6 mv0 dark-gray">On reading and being better</h3>
+              <p class="f5 mv2 gray i">
+                
+                  by Benito Taibo
+                
+              </p>
+            </div>
+            <span class="expand-icon ml3 f4 gray">▼</span>
+          </div>
+        </summary>
+
+        <div class="content pa3 pt0 bt b--black-10">
+          <div class="anthology-content f5 lh-copy">
+            <p>Leer te hace ver más lejos, te hace ver a los ojos de los otros, como iguales, sean del sexo que sean, la religión que sea, la condición social que tengan. Leer abre tu mente y no permite que se llene de polvosos prejuicios, de malas inten- ciones, de ideas preconcebidas. Pero lo lamento, no te hace ser mejor a menos que quieras ser mejor.</p>
+
+          </div>
+          
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Benito Taibo</p>
+            
+            
+            
+          </div>
+          
+        </div>
+      </details>
+      
+      <details class="anthology-item mb3 ba br3" data-authors="Kahlil Gibran" data-type="book">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">On talking</h3>
@@ -1579,16 +1931,24 @@ But ain&rsquo;t I lucky I can still breathe in.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>And then a scholar said, Speak of Talking. And he answered, saying: You talk when you cease to be at peace with your thoughts; And when you can no longer dwell in the solitude of your heart you live in your lips, and sound is a diversion and a pastime. And in much of your talking, thinking is half murdered. For thought is a bird of space, that in a cage of words may indeed unfold its wings but cannot fly.</p>
 
+          </div>
+          
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Kahlil Gibran</p>
+            
+            
+            
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="CHI LECHUAN">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="CHI LECHUAN" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Riverbank</h3>
@@ -1603,7 +1963,7 @@ But ain&rsquo;t I lucky I can still breathe in.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>(Translated from the Chinese)</p>
 <p>One white, one red, one black
 Three horses are drinking at the riverbank</p>
@@ -1622,43 +1982,22 @@ Held in the mouths of three horses</p>
 
           </div>
           
-        </div>
-      </details>
-      
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Benito Taibo">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
-          <div class="flex items-start justify-between">
-            <div class="flex-auto">
-              <h3 class="f4 fw6 mv0 dark-gray">Screenshot_20200301-222507</h3>
-              <p class="f5 mv2 gray i">
-                
-                  by Benito Taibo
-                
-              </p>
-            </div>
-            <span class="expand-icon ml3 f4 gray">▼</span>
-          </div>
-        </summary>
-
-        <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
-            <p>-Leer te hace ver más lejos, te hace ver a los ojos de los
-otros, como iguales, sean del sexo que sean, la religión que
-sea, la condición social que tengan. Leer abre tu mente y no
-permite que se llene de polvosos prejuicios, de malas inten-
-ciones, de ideas preconcebidas. Pero lo lamento, no te hace
-ser mejor a menos que quieras ser mejor.</p>
-
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> CHI LECHUAN</p>
+            
+            
+            
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Andrés Eloy Blanco">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Andrés Eloy Blanco" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
-              <h3 class="f4 fw6 mv0 dark-gray">Silencio by Eloy Blanco</h3>
+              <h3 class="f4 fw6 mv0 dark-gray">Silencio</h3>
               <p class="f5 mv2 gray i">
                 
                   by Andrés Eloy Blanco
@@ -1670,7 +2009,7 @@ ser mejor a menos que quieras ser mejor.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>Cuando tú te quedes muda,
 cuando yo me quede ciego,
 nos quedarán las manos
@@ -1694,14 +2033,22 @@ el silencio.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Andrés Eloy Blanco</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Pablo Neruda">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Pablo Neruda" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
-              <h3 class="f4 fw6 mv0 dark-gray">Silencio by Neruda</h3>
+              <h3 class="f4 fw6 mv0 dark-gray">Silencio</h3>
               <p class="f5 mv2 gray i">
                 
                   by Pablo Neruda
@@ -1713,7 +2060,7 @@ el silencio.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>Yo que crecí dentro de un árbol<br>
 tendría mucho que decir,<br>
 pero aprendí tanto silencio<br>
@@ -1730,11 +2077,19 @@ para convertirlo en naranja.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Pablo Neruda</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Michael Collier">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Michael Collier" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">The Globe</h3>
@@ -1749,7 +2104,7 @@ para convertirlo en naranja.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>After my sons grew up and moved away,
 a globe of the world, cradled in its caliper,</p>
 <p>remained high up on a shelf in their room,
@@ -1772,59 +2127,19 @@ when they palmed the planet to make it spin.</p>
 
           </div>
           
-        </div>
-      </details>
-      
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Rupi Kaur">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
-          <div class="flex items-start justify-between">
-            <div class="flex-auto">
-              <h3 class="f4 fw6 mv0 dark-gray">The hurting</h3>
-              <p class="f5 mv2 gray i">
-                
-                  by Rupi Kaur
-                
-              </p>
-            </div>
-            <span class="expand-icon ml3 f4 gray">▼</span>
-          </div>
-        </summary>
-
-        <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
-            <ol>
-<li>when my mother opens her mouth
-to have a conversation at dinner my
-father shoves the word hush between
-her lips and tells her to never speak
-with her mouth full.</li>
-</ol>
-<p>this is how the women in my family
-learned to live with their mouths
-closed.</p>
-<ol start="2">
-<li>you plough into me with two fingers
-and i am mostly shocked. it feels like
-rubber against an open wound. i do
-not like it. you begin pushing faster
-and faster. but i feel nothing. you
-search my face for a reaction so i
-begin acting like the naked women in
-the videos you watch when you think
-no one’s looking. i imitate their
-moans. hollow and hungry. you ask if
-it feels good and i say yes so quickly it
-sounds rehearsed. but the acting. you
-do not notice.</li>
-</ol>
-
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Michael Collier</p>
+            
+            
+            
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Mary Oliver">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Mary Oliver" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">The Mango</h3>
@@ -1839,7 +2154,7 @@ do not notice.</li>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>One evening</p>
 <p>I met the mango.</p>
 <p>At first there were four or five of them</p>
@@ -1880,46 +2195,19 @@ family news,</p>
 
           </div>
           
-        </div>
-      </details>
-      
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Author Name Here">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
-          <div class="flex items-start justify-between">
-            <div class="flex-auto">
-              <h3 class="f4 fw6 mv0 dark-gray">Title of the Quote or Poem</h3>
-              <p class="f5 mv2 gray i">
-                
-                  by Author Name Here
-                
-              </p>
-            </div>
-            <span class="expand-icon ml3 f4 gray">▼</span>
-          </div>
-        </summary>
-
-        <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
-            <p>Paste the content of the quote or poem here.</p>
-<p>This can be multiple lines and paragraphs.</p>
-<p>It supports markdown formatting like <strong>bold</strong> and <em>italic</em>.</p>
-
-          </div>
-          
           <div class="mt3 pt3 bt b--black-10 f6 gray">
             
-            <p class="mv1"><strong>Work:</strong> Optional - Name of the Book or Work</p>
+            <p class="mv1"><strong>Author:</strong> Mary Oliver</p>
             
             
-            <p class="mv1"><strong>Year:</strong> Optional - Year</p>
             
           </div>
           
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="LENA KHALAF TUFFAHA">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="LENA KHALAF TUFFAHA" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Upon Arrival</h3>
@@ -1934,7 +2222,7 @@ family news,</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>You will need to state the reason for your visit.
 Don&rsquo;t say because I want to walk down old roads
 and caress stone walls the color of my skin.</p>
@@ -1958,11 +2246,19 @@ and spread them out across the land.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> LENA KHALAF TUFFAHA</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Mario Benedetti">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Mario Benedetti" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Viceversa</h3>
@@ -1977,7 +2273,7 @@ and spread them out across the land.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>Tengo miedo de verte<br>
 necesidad de verte<br>
 esperanza de verte<br>
@@ -2001,11 +2297,19 @@ viceversa.</p>
 
           </div>
           
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Mario Benedetti</p>
+            
+            
+            
+          </div>
+          
         </div>
       </details>
       
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="Linda Pastan">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="Linda Pastan" data-type="poem">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">Why Are Your Poems So Dark</h3>
@@ -2020,7 +2324,7 @@ viceversa.</p>
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             <p>Isn&rsquo;t the moon dark too,
 most of the time?</p>
 <p>And doesn&rsquo;t the white page
@@ -2038,6 +2342,14 @@ on your left cheekbone.</p>
 <p>Ask the moon.
 Ask what it has witnessed.</p>
 
+          </div>
+          
+          <div class="mt3 pt3 bt b--black-10 f6 gray">
+            
+            <p class="mv1"><strong>Author:</strong> Linda Pastan</p>
+            
+            
+            
           </div>
           
         </div>
@@ -2074,7 +2386,39 @@ Ask what it has witnessed.</p>
   }
 
   .anthology-content {
-    white-space: pre-wrap;
+    white-space: normal;
+  }
+
+   
+  .anthology-content p {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .anthology-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .anthology-content h1,
+  .anthology-content h2,
+  .anthology-content h3,
+  .anthology-content h4,
+  .anthology-content h5,
+  .anthology-content h6 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .anthology-content h1:first-child,
+  .anthology-content h2:first-child,
+  .anthology-content h3:first-child {
+    margin-top: 0;
+  }
+
+   
+  .content > div:last-child {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
   }
 
   .anthology-item {
@@ -2088,17 +2432,64 @@ Ask what it has witnessed.</p>
   .anthology-item.hidden {
     display: none !important;
   }
+
+   
+  .anthology-item {
+    background-color: #ffffff;
+    border-color: rgba(0,0,0,0.1);
+    color: #17261E;
+  }
+
+  .filter-section {
+    background-color: #f4f4f4;
+  }
+
+  .filter-section input,
+  .filter-section select,
+  .filter-section button {
+    background-color: #ffffff;
+    color: #17261E;
+  }
+
+   
+  .dark-mode .anthology-item {
+    background-color: #17261E;
+    border-color: #558B71;
+    color: #F3F3EE;
+  }
+
+  .dark-mode .filter-section {
+    background-color: #17261E;
+    border: 1px solid #558B71;
+  }
+
+  .dark-mode .filter-section input,
+  .dark-mode .filter-section select,
+  .dark-mode .filter-section button {
+    background-color: #1F3329;
+    color: #F3F3EE;
+    border-color: #558B71;
+  }
+
+  .dark-mode .anthology-item summary:hover {
+    background-color: #2F4C3E;
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const filterSelect = document.getElementById('author-filter');
+    const authorFilter = document.getElementById('author-filter');
+    const typeFilter = document.getElementById('type-filter');
+    const searchInput = document.getElementById('keyword-search');
+    const clearButton = document.getElementById('clear-search');
     const anthologyItems = document.querySelectorAll('.anthology-item');
     const resultCount = document.getElementById('result-count');
     const noResults = document.getElementById('no-results');
 
-    function updateResultCount(count) {
-      if (filterSelect.value === '') {
+    function updateResultCount(count, searchActive) {
+      if (searchActive) {
+        resultCount.textContent = `Found ${count} ${count === 1 ? 'note' : 'notes'}`;
+      } else if (authorFilter.value === '' && typeFilter.value === '') {
         resultCount.textContent = `Showing all ${count} notes`;
       } else {
         resultCount.textContent = `Showing ${count} ${count === 1 ? 'note' : 'notes'}`;
@@ -2106,13 +2497,31 @@ Ask what it has witnessed.</p>
     }
 
     function filterNotes() {
-      const selectedAuthor = filterSelect.value.toLowerCase();
+      const selectedAuthor = authorFilter.value.toLowerCase();
+      const selectedType = typeFilter.value.toLowerCase();
+      const searchTerm = searchInput.value.toLowerCase().trim();
       let visibleCount = 0;
 
       anthologyItems.forEach(item => {
         const authors = item.dataset.authors.toLowerCase();
+        const itemType = (item.dataset.type || '').toLowerCase();
+        const title = item.querySelector('h3').textContent.toLowerCase();
+        const content = item.querySelector('.anthology-content').textContent.toLowerCase();
 
-        if (selectedAuthor === '' || authors.includes(selectedAuthor)) {
+        
+        const matchesAuthor = selectedAuthor === '' || authors.includes(selectedAuthor);
+
+        
+        const matchesType = selectedType === '' || itemType === selectedType;
+
+        
+        const matchesSearch = searchTerm === '' ||
+                             title.includes(searchTerm) ||
+                             authors.includes(searchTerm) ||
+                             content.includes(searchTerm);
+
+        
+        if (matchesAuthor && matchesType && matchesSearch) {
           item.classList.remove('hidden');
           visibleCount++;
         } else {
@@ -2123,18 +2532,65 @@ Ask what it has witnessed.</p>
       
       if (visibleCount === 0) {
         noResults.classList.remove('dn');
+        noResults.querySelector('p').textContent = searchTerm ?
+          'No notes found matching your search.' :
+          'No notes found for the selected filters.';
       } else {
         noResults.classList.add('dn');
       }
 
-      updateResultCount(visibleCount);
+      
+      if (searchTerm) {
+        clearButton.classList.remove('dn');
+      } else {
+        clearButton.classList.add('dn');
+      }
+
+      updateResultCount(visibleCount, searchTerm !== '');
+    }
+
+    function clearSearch() {
+      searchInput.value = '';
+      filterNotes();
+      searchInput.focus();
     }
 
     
-    updateResultCount(anthologyItems.length);
+    updateResultCount(anthologyItems.length, false);
 
     
-    filterSelect.addEventListener('change', filterNotes);
+    authorFilter.addEventListener('change', filterNotes);
+    typeFilter.addEventListener('change', filterNotes);
+    searchInput.addEventListener('input', filterNotes);
+    clearButton.addEventListener('click', clearSearch);
+
+    
+    searchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+      }
+    });
+
+    
+    anthologyItems.forEach(item => {
+      item.addEventListener('toggle', function() {
+        if (this.open) {
+          const clickedItem = this;
+
+          
+          anthologyItems.forEach(otherItem => {
+            if (otherItem !== clickedItem && otherItem.open) {
+              otherItem.open = false;
+            }
+          });
+
+          
+          setTimeout(() => {
+            clickedItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 50);
+        }
+      });
+    });
   });
 </script>
 <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">

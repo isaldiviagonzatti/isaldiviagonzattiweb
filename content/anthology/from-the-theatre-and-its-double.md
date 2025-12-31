@@ -3,7 +3,7 @@ title: From The Theatre and Its Double
 authors:
 - Antonin Artaud
 date: '2025-01-01'
-type: quote
+type: book
 ---
 
 We cannot live forever surrounded by the dead and by death.

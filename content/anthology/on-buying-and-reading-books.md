@@ -3,7 +3,7 @@ title: On buying and reading books
 authors:
 - Umberto Eco
 date: '2025-01-01'
-type: quote
+type: misc
 ---
 
 It is foolish to think that you have to read all the books you buy, as it is foolish to criticize those who buy more books than they will ever be able to read. It would be like saying that you should use all the cutlery or glasses or screwdrivers or drill bits you bought before buying new ones.

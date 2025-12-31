@@ -3,7 +3,7 @@ title: A Colón
 authors:
 - Rubén Darío
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 ¡Desgraciado Almirante! Tu pobre América,  

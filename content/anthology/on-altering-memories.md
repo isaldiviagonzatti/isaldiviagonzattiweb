@@ -4,7 +4,7 @@ authors:
 - Susana Martínez-Conde
 - E. J. Rodríguez
 date: '2025-01-01'
-type: quote
+type: interview
 ---
 
 **¿También nos engañamos con respecto a los recuerdos de nuestra propia vida?**

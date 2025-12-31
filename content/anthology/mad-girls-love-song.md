@@ -3,7 +3,7 @@ title: Mad Girl's Love Song
 authors:
 - Sylvia Plath
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 I shut my eyes and all the world drops dead;  

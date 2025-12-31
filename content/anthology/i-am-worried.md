@@ -3,7 +3,7 @@ title: I am worried
 authors:
 - Mary Oliver
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 I worried a lot. Will the garden grow, will the rivers

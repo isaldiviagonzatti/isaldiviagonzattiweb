@@ -3,7 +3,7 @@ title: Lluvia
 authors:
 - Juan Gelman
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 hoy llueve mucho, mucho,  

@@ -3,7 +3,7 @@ title: I sit and look out
 authors:
 - Walt Whitman
 date: '2025-01-01'
-type: quote
+type: poem
 ---
 
 | sit and look out upon all the sorrows of the world, and upon
