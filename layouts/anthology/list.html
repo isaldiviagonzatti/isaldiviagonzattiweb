@@ -310,6 +310,27 @@
         e.preventDefault();
       }
     });
+
+    // Accordion functionality - close other boxes when one opens
+    anthologyItems.forEach(item => {
+      item.addEventListener('toggle', function() {
+        if (this.open) {
+          const clickedItem = this;
+
+          // Close other items
+          anthologyItems.forEach(otherItem => {
+            if (otherItem !== clickedItem && otherItem.open) {
+              otherItem.open = false;
+            }
+          });
+
+          // Smoothly scroll to keep the opened item in view
+          setTimeout(() => {
+            clickedItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 50);
+        }
+      });
+    });
   });
 </script>
 {{ end }}
