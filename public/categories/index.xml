@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Ignacio Saldivia Gonzatti</title>
-    <link>https://www.ignaciosg.com/categories/</link>
+    <link>http://localhost:42727/categories/</link>
     <description>Recent content in Categories on Ignacio Saldivia Gonzatti</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Ignacio Saldivia Gonzatti</copyright>
     <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.ignaciosg.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:42727/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Circular Economy</title>
-      <link>https://www.ignaciosg.com/categories/circular-economy/</link>
+      <link>http://localhost:42727/categories/circular-economy/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.ignaciosg.com/categories/circular-economy/</guid>
+      <guid>http://localhost:42727/categories/circular-economy/</guid>
       <description></description>
     </item>
     <item>
       <title>Optimization</title>
-      <link>https://www.ignaciosg.com/categories/optimization/</link>
+      <link>http://localhost:42727/categories/optimization/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.ignaciosg.com/categories/optimization/</guid>
+      <guid>http://localhost:42727/categories/optimization/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://www.ignaciosg.com/categories/python/</link>
+      <link>http://localhost:42727/categories/python/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.ignaciosg.com/categories/python/</guid>
+      <guid>http://localhost:42727/categories/python/</guid>
       <description></description>
     </item>
   </channel>

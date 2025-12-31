@@ -1,0 +1,37 @@
+---
+title: On Aging
+authors:
+- Maya Angelou
+date: '2025-01-01'
+type: quote
+---
+
+When you see me sitting quietly,
+Like a sack left on the shelf,
+Don't think | need your chattering.
+I'm listening to myself.
+
+Hold! Stop! Don't pity me!
+
+Hold! Stop your sympathy!
+Understanding if you got it,
+Otherwise I'll do without it!
+
+When my bones are stiff and aching,
+And my feet won't climb the stair,
+
+| will only ask one favor:
+
+Don't bring me no rocking chair.
+When you see me walking, stumbling,
+Don't study and get it wrong.
+
+‘Cause tired don’t mean lazy
+
+And every goodbye ain't gone.
+
+I'm the same person | was back then,
+A little less hair, a little less chin,
+
+A lot less lungs and much less wind.
+But ain't I lucky I can still breathe in.
