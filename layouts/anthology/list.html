@@ -11,21 +11,21 @@
     </header>
 
     <!-- Filter Section -->
-    <div class="filter-section mb4 pa3 bg-near-white br3">
+    <div class="filter-section mb4 pa3 br3">
       <div class="flex flex-wrap items-center mb3">
         <label for="keyword-search" class="f5 fw6 mr3 mb2">Search:</label>
         <input
           type="text"
           id="keyword-search"
           placeholder="Search by keyword..."
-          class="f5 pa2 br2 ba b--black-20 mr3 mb2 flex-auto mw6"
+          class="f5 pa2 br2 ba b--black-20 mr3 mb2 flex-auto mw5"
         >
-        <button id="clear-search" class="f6 pa2 br2 ba b--black-20 bg-white pointer mb2 dn">Clear</button>
+        <button id="clear-search" class="f6 pa2 br2 ba b--black-20 pointer mb2 dn">Clear</button>
       </div>
       <div class="flex flex-wrap items-center">
         <label for="author-filter" class="f5 fw6 mr3 mb2">Filter by author:</label>
         <select id="author-filter" class="f5 pa2 br2 ba b--black-20 mr3 mb2">
-          <option value="">All Authors</option>
+          <option value="">All authors</option>
           {{ $authors := slice }}
           {{ range .Pages }}
             {{ range .Params.authors }}
@@ -39,7 +39,7 @@
 
         <label for="type-filter" class="f5 fw6 mr3 mb2">Filter by type:</label>
         <select id="type-filter" class="f5 pa2 br2 ba b--black-20 mr3 mb2">
-          <option value="">All Types</option>
+          <option value="">All types</option>
           {{ $types := slice }}
           {{ range .Pages }}
             {{ if .Params.type }}
@@ -58,8 +58,8 @@
     <!-- Anthology Notes -->
     <div id="anthology-container">
       {{ range .Pages }}
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="{{ delimit .Params.authors "," }}" data-type="{{ .Params.type }}">
-        <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
+      <details class="anthology-item mb3 ba br3" data-authors="{{ delimit .Params.authors "," }}" data-type="{{ .Params.type }}">
+        <summary class="pa3 pointer br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
               <h3 class="f4 fw6 mv0 dark-gray">{{ .Title }}</h3>
@@ -76,11 +76,14 @@
         </summary>
 
         <div class="content pa3 pt0 bt b--black-10">
-          <div class="anthology-content f5 lh-copy measure-wide">
+          <div class="anthology-content f5 lh-copy">
             {{ .Content }}
           </div>
-          {{ if or .Params.work .Params.year }}
+          {{ if or .Params.authors .Params.work .Params.year }}
           <div class="mt3 pt3 bt b--black-10 f6 gray">
+            {{ if .Params.authors }}
+            <p class="mv1"><strong>Author{{ if gt (len .Params.authors) 1 }}s{{ end }}:</strong> {{ delimit .Params.authors ", " }}</p>
+            {{ end }}
             {{ if .Params.work }}
             <p class="mv1"><strong>Work:</strong> {{ .Params.work }}</p>
             {{ end }}
@@ -136,6 +139,48 @@
 
   .anthology-item.hidden {
     display: none !important;
+  }
+
+  /* Light mode (default) styles */
+  .anthology-item {
+    background-color: #ffffff;
+    border-color: rgba(0,0,0,0.1);
+    color: #17261E;
+  }
+
+  .filter-section {
+    background-color: #f4f4f4;
+  }
+
+  .filter-section input,
+  .filter-section select,
+  .filter-section button {
+    background-color: #ffffff;
+    color: #17261E;
+  }
+
+  /* Dark mode styles */
+  .dark-mode .anthology-item {
+    background-color: #17261E;
+    border-color: #558B71;
+    color: #F3F3EE;
+  }
+
+  .dark-mode .filter-section {
+    background-color: #17261E;
+    border: 1px solid #558B71;
+  }
+
+  .dark-mode .filter-section input,
+  .dark-mode .filter-section select,
+  .dark-mode .filter-section button {
+    background-color: #1F3329;
+    color: #F3F3EE;
+    border-color: #558B71;
+  }
+
+  .dark-mode .anthology-item summary:hover {
+    background-color: #2F4C3E;
   }
 </style>
 
