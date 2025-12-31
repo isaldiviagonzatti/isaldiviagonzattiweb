@@ -12,6 +12,16 @@
 
     <!-- Filter Section -->
     <div class="filter-section mb4 pa3 bg-near-white br3">
+      <div class="flex flex-wrap items-center mb3">
+        <label for="keyword-search" class="f5 fw6 mr3 mb2">Search:</label>
+        <input
+          type="text"
+          id="keyword-search"
+          placeholder="Search by keyword..."
+          class="f5 pa2 br2 ba b--black-20 mr3 mb2 flex-auto mw6"
+        >
+        <button id="clear-search" class="f6 pa2 br2 ba b--black-20 bg-white pointer mb2 dn">Clear</button>
+      </div>
       <div class="flex flex-wrap items-center">
         <label for="author-filter" class="f5 fw6 mr3 mb2">Filter by author:</label>
         <select id="author-filter" class="f5 pa2 br2 ba b--black-20 mr3 mb2">
@@ -26,6 +36,21 @@
           <option value="{{ . }}">{{ . }}</option>
           {{ end }}
         </select>
+
+        <label for="type-filter" class="f5 fw6 mr3 mb2">Filter by type:</label>
+        <select id="type-filter" class="f5 pa2 br2 ba b--black-20 mr3 mb2">
+          <option value="">All Types</option>
+          {{ $types := slice }}
+          {{ range .Pages }}
+            {{ if .Params.type }}
+              {{ $types = $types | append .Params.type }}
+            {{ end }}
+          {{ end }}
+          {{ range ($types | uniq | sort) }}
+          <option value="{{ . }}">{{ . | humanize | title }}</option>
+          {{ end }}
+        </select>
+
         <span id="result-count" class="f6 gray mb2"></span>
       </div>
     </div>
@@ -33,7 +58,7 @@
     <!-- Anthology Notes -->
     <div id="anthology-container">
       {{ range .Pages }}
-      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="{{ delimit .Params.authors "," }}">
+      <details class="anthology-item mb3 ba b--black-20 br3 bg-white" data-authors="{{ delimit .Params.authors "," }}" data-type="{{ .Params.type }}">
         <summary class="pa3 pointer hover-bg-near-white br3 outline-0">
           <div class="flex items-start justify-between">
             <div class="flex-auto">
@@ -116,13 +141,18 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const filterSelect = document.getElementById('author-filter');
+    const authorFilter = document.getElementById('author-filter');
+    const typeFilter = document.getElementById('type-filter');
+    const searchInput = document.getElementById('keyword-search');
+    const clearButton = document.getElementById('clear-search');
     const anthologyItems = document.querySelectorAll('.anthology-item');
     const resultCount = document.getElementById('result-count');
     const noResults = document.getElementById('no-results');
 
-    function updateResultCount(count) {
-      if (filterSelect.value === '') {
+    function updateResultCount(count, searchActive) {
+      if (searchActive) {
+        resultCount.textContent = `Found ${count} ${count === 1 ? 'note' : 'notes'}`;
+      } else if (authorFilter.value === '' && typeFilter.value === '') {
         resultCount.textContent = `Showing all ${count} notes`;
       } else {
         resultCount.textContent = `Showing ${count} ${count === 1 ? 'note' : 'notes'}`;
@@ -130,13 +160,31 @@
     }
 
     function filterNotes() {
-      const selectedAuthor = filterSelect.value.toLowerCase();
+      const selectedAuthor = authorFilter.value.toLowerCase();
+      const selectedType = typeFilter.value.toLowerCase();
+      const searchTerm = searchInput.value.toLowerCase().trim();
       let visibleCount = 0;
 
       anthologyItems.forEach(item => {
         const authors = item.dataset.authors.toLowerCase();
+        const itemType = (item.dataset.type || '').toLowerCase();
+        const title = item.querySelector('h3').textContent.toLowerCase();
+        const content = item.querySelector('.anthology-content').textContent.toLowerCase();
 
-        if (selectedAuthor === '' || authors.includes(selectedAuthor)) {
+        // Check author filter
+        const matchesAuthor = selectedAuthor === '' || authors.includes(selectedAuthor);
+
+        // Check type filter
+        const matchesType = selectedType === '' || itemType === selectedType;
+
+        // Check keyword search (searches in title, author, and content)
+        const matchesSearch = searchTerm === '' ||
+                             title.includes(searchTerm) ||
+                             authors.includes(searchTerm) ||
+                             content.includes(searchTerm);
+
+        // Item is visible only if it matches all filters
+        if (matchesAuthor && matchesType && matchesSearch) {
           item.classList.remove('hidden');
           visibleCount++;
         } else {
@@ -147,18 +195,44 @@
       // Show/hide no results message
       if (visibleCount === 0) {
         noResults.classList.remove('dn');
+        noResults.querySelector('p').textContent = searchTerm ?
+          'No notes found matching your search.' :
+          'No notes found for the selected filters.';
       } else {
         noResults.classList.add('dn');
       }
 
-      updateResultCount(visibleCount);
+      // Show/hide clear button
+      if (searchTerm) {
+        clearButton.classList.remove('dn');
+      } else {
+        clearButton.classList.add('dn');
+      }
+
+      updateResultCount(visibleCount, searchTerm !== '');
+    }
+
+    function clearSearch() {
+      searchInput.value = '';
+      filterNotes();
+      searchInput.focus();
     }
 
     // Initialize count
-    updateResultCount(anthologyItems.length);
+    updateResultCount(anthologyItems.length, false);
 
-    // Add event listener to filter
-    filterSelect.addEventListener('change', filterNotes);
+    // Add event listeners
+    authorFilter.addEventListener('change', filterNotes);
+    typeFilter.addEventListener('change', filterNotes);
+    searchInput.addEventListener('input', filterNotes);
+    clearButton.addEventListener('click', clearSearch);
+
+    // Allow Enter key to search
+    searchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+      }
+    });
   });
 </script>
 {{ end }}
