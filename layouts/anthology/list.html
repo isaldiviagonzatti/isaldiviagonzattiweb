@@ -126,7 +126,39 @@
   }
 
   .anthology-content {
-    white-space: pre-wrap;
+    white-space: normal;
+  }
+
+  /* Reduce spacing for paragraphs and headings */
+  .anthology-content p {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .anthology-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .anthology-content h1,
+  .anthology-content h2,
+  .anthology-content h3,
+  .anthology-content h4,
+  .anthology-content h5,
+  .anthology-content h6 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .anthology-content h1:first-child,
+  .anthology-content h2:first-child,
+  .anthology-content h3:first-child {
+    margin-top: 0;
+  }
+
+  /* Reduce spacing between content and metadata */
+  .content > div:last-child {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
   }
 
   .anthology-item {
