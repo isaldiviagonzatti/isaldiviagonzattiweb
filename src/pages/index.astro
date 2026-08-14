@@ -85,8 +85,8 @@ import avatar from '../assets/avatar.jpg';
       <div class="section-heading">
         <h2>Contact Me</h2>
         <p>
-          Interested in working together? Questions about my projects? Or about life? Send me
-          a message and I will be happy to grab a coffee.
+          Interested in working together? Questions about my projects? Send me
+          a message and let's grab a coffee.
         </p>
       </div>
       <ContactForm />
@@ -190,8 +190,13 @@ import avatar from '../assets/avatar.jpg';
     margin: 2rem auto 0;
     aspect-ratio: 1;
     border-radius: 50%;
-    filter: grayscale(1) contrast(1.08);
+    filter: grayscale(1) contrast(0.9);
     object-fit: cover;
+  }
+
+  .about-heading h2 {
+    text-align: center;
+    text-transform: lowercase;
   }
 
   .home-sections > section > h2,

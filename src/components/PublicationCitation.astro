@@ -46,5 +46,5 @@ const volumeAndIssue = publication.volume
   ))}{' '}
   ({publication.year}). {publication.title.replace(/[.!?]$/, '')}.
   {publication.journal && <> <em>{publication.journal}</em></>}{volumeAndIssue && <>, {volumeAndIssue}</>}{publication.pages && <>, {publication.pages}</>}.
-  {' '}<a href={`https://doi.org/${publication.doi}`}>{publication.doi}</a>
+  {' '}<a href={`https://doi.org/${publication.doi}`} target="_blank" rel="noopener noreferrer">{publication.doi}</a>
 </p>

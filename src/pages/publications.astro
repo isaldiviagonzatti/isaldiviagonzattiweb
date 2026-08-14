@@ -21,7 +21,13 @@ import { publications } from '../data/publications';
           {extras?.links && (
             <div class="publication-links">
               {extras.links.map((link) => (
-                <a href={link.href} aria-label={link.icon ? link.label : undefined} title={link.icon ? link.label : undefined}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.icon ? link.label : undefined}
+                  title={link.icon ? link.label : undefined}
+                >
                   {link.icon === 'osf'
                     ? <span class="publication-icon ai-osf" aria-hidden="true"></span>
                     : link.label}
