@@ -54,33 +54,6 @@ import avatar from '../assets/avatar.jpg';
       <AboutContent />
     </section>
 
-    <section id="resume">
-      <h2><a class="section-title-link" href="/resume/">Résumé</a></h2>
-      <p>Résumé of Ignacio Saldivia Gonzatti</p>
-    </section>
-
-    <section id="publications">
-      <h2><a class="section-title-link" href="/publications/">Publications</a></h2>
-      <p>Projects I contributed to that have been published in peer-reviewed journals</p>
-    </section>
-
-    <section id="notes">
-      <h2><a class="section-title-link" href="/notes/">Notes</a></h2>
-      <ul class="home-note-list">
-        <li>
-          <a href="/foodsheds/">Safeguarding Food Security in Tamale: A Case Study</a>
-        </li>
-        <li>
-          <a href="/project/thesismsc/">MSc Thesis</a>
-        </li>
-      </ul>
-    </section>
-
-    <section id="anthology">
-      <h2><a class="section-title-link" href="/anthology/">Anthology</a></h2>
-      <p>A collection of my favourite poems, excerpts from books, and other writings.</p>
-    </section>
-
     <section id="contact" class="expanded-section">
       <div class="section-heading">
         <h2>Contact Me</h2>
@@ -158,7 +131,7 @@ import avatar from '../assets/avatar.jpg';
 
   .home-sections section {
     display: grid;
-    grid-template-columns: minmax(9rem, 0.35fr) minmax(0, 1fr);
+    grid-template-columns: minmax(12rem, 0.35fr) minmax(0, 1fr);
     gap: 2rem;
     align-items: start;
     padding-block: clamp(2.5rem, 6vw, 4.5rem);
@@ -167,17 +140,6 @@ import avatar from '../assets/avatar.jpg';
 
   .home-sections section:last-child {
     border-bottom: 0;
-  }
-
-  .section-title-link {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-transform: uppercase;
-    text-underline-offset: 0.18em;
-  }
-
-  .home-sections .expanded-section {
-    grid-template-columns: minmax(12rem, 0.35fr) minmax(0, 1fr);
   }
 
   .section-heading p {
@@ -199,17 +161,14 @@ import avatar from '../assets/avatar.jpg';
     text-transform: lowercase;
   }
 
-  .home-sections > section > h2,
-  .home-sections > section > p,
-  .home-sections > section > ul,
   .section-heading h2,
   .section-heading p {
     margin: 0;
   }
 
-  .home-sections > section > h2,
   .section-heading h2 {
     font-size: clamp(1.4rem, 3vw, 2rem);
+    text-transform: lowercase;
   }
 
   .about-socials {
@@ -230,15 +189,6 @@ import avatar from '../assets/avatar.jpg';
     font-size: 1.25rem;
   }
 
-  .home-note-list {
-    padding: 0;
-    list-style: none;
-  }
-
-  .home-note-list li + li {
-    margin-top: 0.75rem;
-  }
-
   @media (max-width: 52rem) {
     .home-hero {
       grid-template-columns: 1fr;
@@ -254,8 +204,7 @@ import avatar from '../assets/avatar.jpg';
       padding-top: 1.5rem;
     }
 
-    .home-sections section,
-    .home-sections .expanded-section {
+    .home-sections section {
       grid-template-columns: 1fr;
       gap: 1rem;
     }

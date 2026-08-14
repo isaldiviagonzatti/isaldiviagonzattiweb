@@ -1,0 +1,43 @@
+---
+import { publicationExtras } from '../data/publicationExtras';
+
+interface Props {
+  doi: string;
+}
+
+const links = publicationExtras[Astro.props.doi]?.links ?? [];
+---
+
+{links.length > 0 && (
+  <div class="publication-links">
+    {links.map((link) => (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={link.icon ? link.label : undefined}
+        title={link.icon ? link.label : undefined}
+      >
+        {link.icon === 'osf'
+          ? <span class="publication-icon ai-osf" aria-hidden="true"></span>
+          : link.label}
+      </a>
+    ))}
+  </div>
+)}
+
+<style>
+  .publication-links {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 650;
+  }
+
+  .publication-icon {
+    font-family: "Academicons";
+    font-size: 1.2rem;
+    font-style: normal;
+    line-height: 1;
+  }
+</style>

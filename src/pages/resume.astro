@@ -1,8 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PublicationCitation from '../components/PublicationCitation.astro';
+import PublicationLinks from '../components/PublicationLinks.astro';
 import { publications } from '../data/publications';
 import cvUrl from '../assets/resume/saldiviaGonzatti_cv_academic.pdf?url';
+
+const updatedDate = new Intl.DateTimeFormat('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+  timeZone: 'Europe/Amsterdam'
+}).format(new Date());
 ---
 
 <BaseLayout title="Résumé" description="Résumé of Ignacio Saldivia Gonzatti" wide>
@@ -193,10 +201,15 @@ import cvUrl from '../assets/resume/saldiviaGonzatti_cv_academic.pdf?url';
       </article>
     </section>
 
-    <section class="cv-section">
+    <section id="publications" class="cv-section">
       <h2>Publications</h2>
       <div class="cv-publications">
-        {publications.map((publication) => <PublicationCitation publication={publication} />)}
+        {publications.map((publication) => (
+          <div class="cv-publication">
+            <PublicationCitation publication={publication} />
+            <PublicationLinks doi={publication.doi} />
+          </div>
+        ))}
       </div>
     </section>
 
@@ -230,7 +243,7 @@ import cvUrl from '../assets/resume/saldiviaGonzatti_cv_academic.pdf?url';
       </p>
     </section>
 
-    <p class="cv-updated">Updated March 29, 2024</p>
+    <p class="cv-updated">Updated {updatedDate}</p>
   </div>
 </BaseLayout>
 
@@ -241,14 +254,15 @@ import cvUrl from '../assets/resume/saldiviaGonzatti_cv_academic.pdf?url';
 
   .cv-header h1 {
     margin-bottom: 0;
+    text-transform: lowercase;
   }
 
   .download-button {
     gap: 0.65rem;
     margin-top: 1.5rem;
-    border-color: #000;
-    background: #000;
-    color: #fff;
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--paper);
   }
 
   .download-button svg {
@@ -268,6 +282,7 @@ import cvUrl from '../assets/resume/saldiviaGonzatti_cv_academic.pdf?url';
     border-bottom: 1px solid var(--ink);
     font-size: 1.35rem;
     letter-spacing: -0.02em;
+    text-transform: lowercase;
   }
 
   .cv-entry {
@@ -304,9 +319,13 @@ import cvUrl from '../assets/resume/saldiviaGonzatti_cv_academic.pdf?url';
     margin-top: 0.45rem;
   }
 
-  .cv-publications :global(.publication-citation) {
+  .cv-publication {
     padding-block: 1rem;
     border-bottom: 1px solid var(--line);
+  }
+
+  .cv-publication :global(.publication-citation) {
+    margin-bottom: 0.75rem;
   }
 
   .skills-list {

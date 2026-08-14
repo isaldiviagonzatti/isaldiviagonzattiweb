@@ -16,10 +16,16 @@ const {
 } = Astro.props;
 const pageTitle = title ? `${title} — ${site.name}` : site.name;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
+const navigation = [
+  { label: 'Résumé', href: '/resume/' },
+  { label: 'Publications', href: '/resume/#publications' },
+  { label: 'Notes', href: '/notes/' },
+  { label: 'Anthology', href: '/anthology/' }
+];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -28,6 +34,16 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
     <link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
     <link rel="icon" type="image/png" href="/img/favicon.png" />
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <script is:inline>
+      (() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+          document.documentElement.dataset.theme = 'light';
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#ffffff');
+        }
+      })();
+    </script>
     <title>{pageTitle}</title>
   </head>
   <body>
@@ -38,6 +54,23 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
           <img class="site-logo" src="/img/logo.svg" alt="" width="36" height="36" />
           <span>{site.name}</span>
         </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <ul>
+            {navigation.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={Astro.url.pathname.startsWith(item.href) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode">
+          Light
+        </button>
       </div>
     </header>
 
@@ -51,5 +84,30 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
         <SocialLinks />
       </div>
     </footer>
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        const toggle = document.querySelector('[data-theme-toggle]');
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+
+        if (!(toggle instanceof HTMLButtonElement)) return;
+
+        const showCurrentTheme = () => {
+          const isDark = root.dataset.theme === 'dark';
+          toggle.textContent = isDark ? 'Light' : 'Dark';
+          toggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+          themeColor?.setAttribute('content', isDark ? '#0a0a0a' : '#ffffff');
+        };
+
+        showCurrentTheme();
+
+        toggle.addEventListener('click', () => {
+          const theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+          root.dataset.theme = theme;
+          localStorage.setItem('theme', theme);
+          showCurrentTheme();
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -143,8 +143,8 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
     grid-template-columns: minmax(13rem, 2fr) minmax(10rem, 1fr) minmax(8rem, 0.7fr) auto;
     align-items: end;
     gap: 1rem;
-    padding: 1.25rem 0;
-    border-block: 1px solid var(--ink);
+    padding: 0 0 1.5rem;
+    border-bottom: 1px solid var(--line);
   }
 
   .filters label span {
@@ -180,18 +180,18 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
   }
 
   .result-line {
-    padding-block: 1rem;
+    padding-block: 0.75rem 1.25rem;
     color: var(--muted);
     font-size: 0.8rem;
     text-align: right;
   }
 
-  .anthology-list {
-    border-top: 1px solid var(--line);
+  .anthology-entry + .anthology-entry {
+    margin-top: 0.2rem;
   }
 
-  .anthology-entry {
-    border-bottom: 1px solid var(--line);
+  .anthology-entry[open] {
+    margin-bottom: 1.5rem;
   }
 
   .anthology-entry[hidden] {
@@ -202,7 +202,7 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.4fr);
     gap: 2rem;
-    padding-block: 1.35rem;
+    padding-block: 1rem;
     cursor: pointer;
     list-style: none;
   }
@@ -244,8 +244,6 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
     grid-template-columns: auto 1fr;
     gap: 0.25rem 1rem;
     margin: 2rem 0 0;
-    padding-top: 1rem;
-    border-top: 1px solid var(--line);
     color: var(--muted);
     font-size: 0.85rem;
   }
