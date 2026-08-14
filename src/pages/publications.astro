@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationCitation from '../components/PublicationCitation.astro';
+import { publicationExtras } from '../data/publicationExtras';
+import { publications } from '../data/publications';
+---
+
+<BaseLayout title="Publications" description="Publications by Ignacio Saldivia Gonzatti">
+  <header class="page-header">
+    <h1>Publications</h1>
+    <p class="lede">Projects I contributed to that have been published in peer-reviewed journals</p>
+  </header>
+
+  <div class="publication-list">
+    {publications.map((publication) => {
+      const extras = publicationExtras[publication.doi];
+
+      return (
+        <article>
+          <PublicationCitation publication={publication} />
+          {extras?.note && <p class="publication-note"><em>{extras.note}</em></p>}
+          {extras?.links && (
+            <div class="publication-links">
+              {extras.links.map((link) => <a href={link.href}>{link.label}</a>)}
+            </div>
+          )}
+        </article>
+      );
+    })}
+  </div>
+</BaseLayout>
+
+<style>
+  .publication-list {
+    border-top: 1px solid var(--ink);
+  }
+
+  .publication-list article {
+    padding-block: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .publication-list article > :global(.publication-citation) {
+    margin-bottom: 0.75rem;
+  }
+
+  .publication-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .publication-links {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 650;
+  }
+</style>

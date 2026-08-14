@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import AboutContent from '../components/AboutContent.astro';
+import ContactForm from '../components/ContactForm.astro';
+import avatar from '../assets/avatar.jpg';
+---
+
+<BaseLayout wide>
+  <section class="home-hero">
+    <img
+      class="home-image"
+      src="/img/myfortressview.jpg"
+      alt="View from My Fortress"
+      width="1200"
+      height="800"
+    />
+    <div class="home-poem">
+      <p class="subtitle">Since you got here, you might as well read a poem.</p>
+      <blockquote>
+        <p><em>I Go Down To The Shore</em></p>
+        <p>
+          I go down to the shore in the morning<br />
+          and depending on the hour the waves<br />
+          are rolling in or moving out,<br />
+          and I say, oh, I am miserable,<br />
+          what shall—<br />
+          what should I do? And the sea says<br />
+          in its lovely voice:<br />
+          Excuse me, I have work to do.
+        </p>
+        <cite>— Mary Oliver</cite>
+      </blockquote>
+      <a class="section-link" href="#about">ABOUT ME ↓</a>
+      <SocialLinks />
+    </div>
+  </section>
+
+  <div class="home-sections">
+    <section id="about" class="expanded-section">
+      <div class="section-heading">
+        <h2>About</h2>
+        <p>PhD Candidate Food Security and Climate Services</p>
+        <img
+          class="about-avatar"
+          src={avatar.src}
+          alt="Ignacio Saldivia Gonzatti"
+          width="680"
+          height="680"
+        />
+      </div>
+      <AboutContent />
+    </section>
+
+    <section id="resume">
+      <h2>Résumé</h2>
+      <p>Résumé of Ignacio Saldivia Gonzatti</p>
+      <a class="section-link" href="/resume/">RÉSUMÉ →</a>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <p>Projects I contributed to that have been published in peer-reviewed journals</p>
+      <a class="section-link" href="/publications/">PUBLICATIONS →</a>
+    </section>
+
+    <section id="notes">
+      <h2>Notes</h2>
+      <ul class="home-note-list">
+        <li>
+          <a href="/foodsheds/">Safeguarding Food Security in Tamale: A Case Study</a>
+        </li>
+        <li>
+          <a href="/project/thesismsc/">MSc Thesis</a>
+        </li>
+      </ul>
+      <a class="section-link" href="/notes/">NOTES →</a>
+    </section>
+
+    <section id="anthology">
+      <h2>Anthology</h2>
+      <p>A collection of my favourite poems, excerpts from books, and other writings.</p>
+      <a class="section-link" href="/anthology/">ANTHOLOGY →</a>
+    </section>
+
+    <section id="contact" class="expanded-section">
+      <div class="section-heading">
+        <h2>Contact Me</h2>
+        <p>
+          Interested in working together? Questions about my projects? Or about life? Send me
+          a message and I will be happy to grab a coffee.
+        </p>
+      </div>
+      <ContactForm />
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  :global(#main-content) {
+    padding-top: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .home-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.8fr);
+    align-items: stretch;
+    min-height: min(48rem, calc(100vh - 10rem));
+    margin-bottom: clamp(5rem, 12vw, 10rem);
+  }
+
+  .home-image {
+    width: 100%;
+    height: 100%;
+    min-height: 34rem;
+    filter: grayscale(1);
+    object-fit: cover;
+  }
+
+  .home-poem {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2rem, 5vw, 4.5rem);
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  blockquote {
+    margin: 1.5rem 0 2rem;
+  }
+
+  blockquote p {
+    margin-bottom: 1.25rem;
+  }
+
+  cite {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: normal;
+  }
+
+  .home-poem :global(.social-links) {
+    margin-top: 2rem;
+  }
+
+  .section-link {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .home-sections {
+    border-top: 1px solid var(--ink);
+  }
+
+  .home-sections section {
+    display: grid;
+    grid-template-columns: minmax(9rem, 0.35fr) minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: start;
+    padding-block: clamp(2.5rem, 6vw, 4.5rem);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .home-sections section:last-child {
+    border-bottom: 0;
+  }
+
+  .home-sections .expanded-section {
+    grid-template-columns: minmax(12rem, 0.35fr) minmax(0, 1fr);
+  }
+
+  .section-heading p {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .about-avatar {
+    width: min(100%, 12rem);
+    margin-top: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    filter: grayscale(1) contrast(1.08);
+    object-fit: cover;
+  }
+
+  .home-sections > section > h2,
+  .home-sections > section > p,
+  .home-sections > section > ul,
+  .section-heading h2,
+  .section-heading p {
+    margin: 0;
+  }
+
+  .home-sections > section > h2,
+  .section-heading h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+  }
+
+  .home-note-list {
+    padding: 0;
+    list-style: none;
+  }
+
+  .home-note-list li + li {
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 52rem) {
+    .home-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .home-image {
+      min-height: 24rem;
+      max-height: 60vh;
+    }
+
+    .home-sections section,
+    .home-sections .expanded-section {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .about-avatar {
+      width: 8rem;
+    }
+  }
+</style>

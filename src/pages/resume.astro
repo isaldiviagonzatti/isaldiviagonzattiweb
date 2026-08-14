@@ -1,0 +1,363 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationCitation from '../components/PublicationCitation.astro';
+import { publications } from '../data/publications';
+import cvUrl from '../assets/resume/saldiviaGonzatti_cv_academic.pdf?url';
+---
+
+<BaseLayout title="Résumé" description="Résumé of Ignacio Saldivia Gonzatti" wide>
+  <header class="cv-header">
+    <div>
+      <h1>Résumé</h1>
+      <a class="button download-button" href={cvUrl} download="saldiviaGonzatti_cv_academic">
+        <span>Download in PDF</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+          <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="cv-content">
+    <section class="cv-section">
+      <h2>Education</h2>
+
+      <article class="cv-entry">
+        <div class="entry-heading">
+          <h3>PhD in Climate Research</h3>
+          <p>March 2024 – Ongoing</p>
+          <p><em>Wageningen University</em></p>
+          <p><em>Wageningen, The Netherlands</em></p>
+        </div>
+        <ul>
+          <li>Supervised by Dr. Hester Biemans and Dr. Spyros Paparrizos</li>
+          <li>Candidate at the Wageningen Institute for Environment and Climate Research</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-heading">
+          <h3>Master of Science in Climate Studies</h3>
+          <p>Sep. 2021 – July 2023</p>
+          <p><em>Wageningen University</em></p>
+          <p><em>Wageningen, The Netherlands</em></p>
+        </div>
+        <ul>
+          <li>Specialisation: Climate, Society and Economics.</li>
+          <li>
+            Thesis: Study of the State of Pineapple Leaves Valorisation in the Context of
+            Circular Bioeconomy in Costa Rica.
+          </li>
+          <li>
+            Relevant courses: Earth and Ecosystems, Climate Smart Agriculture, Ecological
+            Modelling, Environmental Economics.
+          </li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-heading">
+          <h3>Bachelor of Science in Economics</h3>
+          <p>Sep. 2015 – May 2021</p>
+          <p><em>Complutense University</em></p>
+          <p><em>Madrid, Spain</em></p>
+        </div>
+        <ul>
+          <li>Specialisation: World Economics.</li>
+          <li>
+            Thesis: Factors Influencing the Rate of Sorted Solid Waste Collection: An
+            Empirical Analysis in Catalonian Municipalities. <em>With Honours and published
+            in a peer-reviewed journal.</em>
+          </li>
+          <li>
+            Relevant courses: Mathematics, Statistics, Econometrics, Development Economics,
+            Advanced Macroeconomics.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Experience</h2>
+
+      <article class="cv-entry">
+        <div class="entry-heading">
+          <h3>Wageningen University</h3>
+          <p>March 2024 – Ongoing</p>
+          <p><em>PhD Researcher</em></p>
+          <p><em>Wageningen, The Netherlands</em></p>
+        </div>
+        <ul>
+          <li>
+            Project: Foodshed Climate Services for Sustainable Development in Sub-Saharan
+            Africa (SAFE4ALL).
+          </li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-heading">
+          <h3>Kiel Institute for the World Economy (IfW Kiel)</h3>
+          <p>February 2023 – September 2023</p>
+          <p><em>Research Intern</em></p>
+          <p><em>Kiel, Germany</em></p>
+        </div>
+        <ul>
+          <li>
+            Supervised by Dr. Wilfried Rickels at the Global Commons and Climate Policy group.
+          </li>
+          <li>
+            Worked on a scientific paper assessing European progress toward SDG 14 - Life
+            Below Water. Conducted literature review, data collection, statistical analysis,
+            and data visualization.
+          </li>
+          <li>
+            Contributed to advancing a theoretical model for an ocean-based Carbon Dioxide
+            Removal incentive scheme. The project involved the integration of economic
+            principles and ocean carbon cycle dynamics. The paper is a work in progress.
+          </li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-heading">
+          <h3>Open Science Community Wageningen</h3>
+          <p>September 2022 – September 2023</p>
+          <p><em>Research Analyst</em></p>
+          <p><em>Wageningen, The Netherlands</em></p>
+        </div>
+        <ul>
+          <li>
+            Led a survey initiative targeting university staff to assess perceptions and
+            adoption of open science principles and practices. Responsibilities included
+            survey design, data analysis and report writing. The report highlighted the need
+            for further training and support to promote specific open science practices.
+          </li>
+          <li>
+            In charge of website maintenance and redesign project. Used Hugo, Markdown, HTML,
+            and CSS to enhance the site's functionality, aesthetics, and user experience. The
+            new website was launched in September 2023.
+          </li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-heading">
+          <h3>Wageningen University</h3>
+          <p>June 2022 – September 2022</p>
+          <p><em>Fieldwork at the Environmental Economics and Natural Resources Group</em></p>
+          <p><em>Pital, Costa Rica</em></p>
+        </div>
+        <ul>
+          <li>Supervised by Dr. Francisco Alpizar</li>
+          <li>
+            Conducted in-depth interviews with over 15 stakeholders to gather insights into
+            circular economy practices.
+          </li>
+          <li>
+            Implemented a Fuzzy Cognitive Map and successfully translated interview data into
+            actionable recommendations for addressing environmental issues.
+          </li>
+          <li>
+            Applied a Supply Chain Optimisation model using Python, enabling efficient
+            allocation of biomass processing plants within the pineapple supply chain.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Projects</h2>
+
+      <article class="cv-entry">
+        <div class="entry-heading">
+          <h3>Academic Consultancy Training</h3>
+          <p>March 2022 – May 2022</p>
+          <p><em>Climate Adaptation Services</em></p>
+          <p><em>Wageningen, The Netherlands</em></p>
+        </div>
+        <ul>
+          <li>
+            Collaborated as a member of a six-student team to deliver a three-month,
+            full-time consultancy project.
+          </li>
+          <li>
+            This research effort included data collection, analysis of policy frameworks,
+            and the synthesis of findings into actionable insights.
+          </li>
+          <li>
+            Our report included a set of recommendations and best practices on how to
+            implement a monitoring framework for climate adaptation.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Publications</h2>
+      <div class="cv-publications">
+        {publications.map((publication) => <PublicationCitation publication={publication} />)}
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Technical Skills</h2>
+      <dl class="skills-list">
+        <div>
+          <dt>Data Analysis</dt>
+          <dd><strong>Python</strong> Pandas, NumPy, SciPy, statsmodels, Xarray, netcdf4 <span aria-hidden="true">|</span> <strong>R</strong> dplyr, tidyr</dd>
+        </div>
+        <div>
+          <dt>Data Visualization</dt>
+          <dd><strong>Python</strong> Plotly, Matplotlib, Seaborn <span aria-hidden="true">|</span> <strong>R</strong> ggplot2, Shiny <span aria-hidden="true">|</span> <strong>ArcGIS</strong> StoryMaps</dd>
+        </div>
+        <div>
+          <dt>GIS</dt>
+          <dd><strong>Python</strong> GeoPandas, Fiona, Shapely, OSMnx, Folium</dd>
+        </div>
+        <div><dt>Version Control</dt><dd><strong>Git</strong></dd></div>
+        <div><dt>Document Preparation</dt><dd><strong>LaTeX</strong></dd></div>
+        <div><dt>Office Suite</dt><dd><strong>MS-Office, LibreOffice</strong></dd></div>
+        <div><dt>Operating Systems</dt><dd><strong>Linux, Windows</strong></dd></div>
+      </dl>
+    </section>
+
+    <section class="cv-section">
+      <h2>Languages</h2>
+      <p>
+        <strong>Spanish:</strong> Native Speaker. <strong>English:</strong> Proficient (C1).
+        {' '}<strong>German:</strong> Elementary (A2).
+      </p>
+    </section>
+
+    <p class="cv-updated">Updated March 29, 2024</p>
+  </div>
+</BaseLayout>
+
+<style>
+  .cv-header {
+    margin-bottom: clamp(4rem, 8vw, 7rem);
+  }
+
+  .cv-header h1 {
+    margin-bottom: 0;
+  }
+
+  .download-button {
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+    border-color: #000;
+    background: #000;
+    color: #fff;
+  }
+
+  .download-button svg {
+    display: block;
+  }
+
+  .cv-content {
+    max-width: 58rem;
+  }
+
+  .cv-section {
+    margin-bottom: 4rem;
+  }
+
+  .cv-section > h2 {
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--ink);
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+  }
+
+  .cv-entry {
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .entry-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.25rem 2rem;
+  }
+
+  .entry-heading h3,
+  .entry-heading p {
+    margin: 0;
+  }
+
+  .entry-heading p:nth-child(even) {
+    text-align: right;
+  }
+
+  .entry-heading p {
+    font-size: 0.92rem;
+  }
+
+  .cv-entry ul {
+    margin: 1rem 0 0;
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .cv-entry li + li {
+    margin-top: 0.45rem;
+  }
+
+  .cv-publications :global(.publication-citation) {
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .skills-list {
+    margin: 0;
+  }
+
+  .skills-list > div {
+    display: grid;
+    grid-template-columns: minmax(9rem, 0.35fr) minmax(0, 1fr);
+    gap: 1rem 2rem;
+    padding-block: 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .skills-list dt {
+    font-weight: 650;
+  }
+
+  .skills-list dd {
+    margin: 0;
+  }
+
+  .cv-updated {
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: right;
+  }
+
+  @media (max-width: 45rem) {
+    .entry-heading {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+
+    .entry-heading p:nth-child(even) {
+      text-align: left;
+    }
+
+    .entry-heading p:nth-child(2) {
+      margin-top: 0.35rem;
+    }
+
+    .skills-list > div {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+    }
+  }
+
+  @media print {
+    .download-button {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,18 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  labelled?: boolean;
+}
+
+const { labelled = false } = Astro.props;
+---
+
+<div class:list={['social-links', { labelled }]} aria-label="Social profiles">
+  {site.social.map((item) => (
+    <a href={item.href} rel="me noreferrer" aria-label={item.label} title={item.label}>
+      <span class:list={['social-icon', item.pack, `${item.pack}-${item.icon}`]} aria-hidden="true"></span>
+      {labelled && <span>{item.label}</span>}
+    </a>
+  ))}
+</div>

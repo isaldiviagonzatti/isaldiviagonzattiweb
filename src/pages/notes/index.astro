@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const notes = [
+  {
+    date: '26 November 2024',
+    title: 'Safeguarding Food Security in Tamale: A Case Study',
+    description:
+      'In the Tamale Metropolitan Area of Ghana (outlined in thick black on the map below), the LPJmL-Foodshed CIS provides crucial insights into food availability amid changing conditions. Tamale’s rapid growth, driven by internal and international migration, raises urgent questions about its food supply.',
+    href: '/foodsheds/'
+  },
+  {
+    date: '3 October 2023',
+    title: 'MSc Thesis',
+    description:
+      'Study of the Current State of Pineapple Leaves Valorisation in the Context of Circular Bioeconomy in Costa Rica',
+    href: '/project/thesismsc/'
+  }
+];
+---
+
+<BaseLayout title="Notes" description="Notes by Ignacio Saldivia Gonzatti">
+  <header class="page-header">
+    <h1>Notes</h1>
+  </header>
+
+  <ol class="notes-list">
+    {notes.map((note) => (
+      <li>
+        <p class="note-date">{note.date}</p>
+        <h2><a href={note.href}>{note.title}</a></h2>
+        <p>{note.description}</p>
+      </li>
+    ))}
+  </ol>
+</BaseLayout>
+
+<style>
+  .notes-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--ink);
+  }
+
+  .notes-list li {
+    padding-block: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .notes-list h2 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+  }
+
+  .notes-list h2 a {
+    text-decoration: none;
+  }
+
+  .notes-list h2 a:hover {
+    text-decoration: underline;
+  }
+
+  .note-date {
+    margin-bottom: 0.65rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .notes-list li > p:last-child {
+    margin-bottom: 0;
+  }
+</style>

@@ -1,0 +1,50 @@
+---
+import type { Publication, PublicationAuthor } from '../data/publications';
+
+interface Props {
+  publication: Publication;
+}
+
+const { publication } = Astro.props;
+
+function initials(given: string) {
+  return given
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) =>
+      part
+        .split('-')
+        .map((name) => `${name.charAt(0).toLocaleUpperCase()}.`)
+        .join('-')
+    )
+    .join(' ');
+}
+
+function authorName(author: PublicationAuthor) {
+  const given = initials(author.given);
+  return given ? `${author.family}, ${given}` : author.family;
+}
+
+function separator(index: number, total: number) {
+  if (index < total - 2) return ', ';
+  if (index === total - 2) return total === 2 ? ' & ' : ', & ';
+  return '';
+}
+
+const volumeAndIssue = publication.volume
+  ? `${publication.volume}${publication.issue ? `(${publication.issue})` : ''}`
+  : '';
+---
+
+<p class="publication-citation">
+  {publication.authors.map((author, index) => (
+    <>
+      {author.isOwner ? <strong>{authorName(author)}</strong> : authorName(author)}
+      {separator(index, publication.authors.length)}
+    </>
+  ))}{' '}
+  ({publication.year}). {publication.title.replace(/[.!?]$/, '')}.
+  {publication.journal && <> <em>{publication.journal}</em></>}{volumeAndIssue && <>, {volumeAndIssue}</>}{publication.pages && <>, {publication.pages}</>}.
+  {' '}<a href={`https://doi.org/${publication.doi}`}>{publication.doi}</a>
+</p>

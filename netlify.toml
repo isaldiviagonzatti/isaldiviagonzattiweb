@@ -1,17 +1,6 @@
 [build]
-command = 'hugo'
-publish = 'public'
+command = 'npm run build'
+publish = 'dist'
 
 [build.environment]
-HUGO_VERSION = '0.102.3'
-
-[context]
-[context.branch-deploy]
-command = 'hugo -F -b $DEPLOY_PRIME_URL'
-
-[context.deploy-preview]
-command = 'hugo -F -b $DEPLOY_PRIME_URL'
-
-[context.production]
-[context.production.environment]
-HUGO_ENV = 'production'
+NODE_VERSION = '22.20.0'

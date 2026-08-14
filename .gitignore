@@ -1,6 +1,5 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-.bak
-/python
+node_modules/
+dist/
+.astro/
+.env
+.env.*

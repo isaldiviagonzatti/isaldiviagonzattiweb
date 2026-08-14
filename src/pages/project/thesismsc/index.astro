@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import thesisPdf from '../../../assets/project/thesismsc/MScThesis.pdf?url';
+import resultsImage from '../../../assets/project/thesismsc/resultsALL.png';
+import processImage from '../../../assets/project/thesismsc/processFCM.png';
+
+const thesisEmbedUrl = `${thesisPdf}#toolbar=0`;
+---
+
+<BaseLayout
+  title="MSc Thesis"
+  description="Study of the Current State of Pineapple Leaves Valorisation in the Context of Circular Bioeconomy in Costa Rica"
+>
+  <article>
+    <header class="page-header">
+      <h1>MSc Thesis</h1>
+      <p class="lede">
+        Study of the Current State of Pineapple Leaves Valorisation in the Context of Circular
+        Bioeconomy in Costa Rica
+      </p>
+      <p class="muted">Ignacio Saldivia Gonzatti · 3 October 2023</p>
+      <div class="project-links">
+        <a href="https://github.com/isaldiviagonzatti/MscThesis/tree/main">Code</a>
+      </div>
+    </header>
+
+    <div class="prose">
+      <p>
+        I conducted my MSc thesis at the Environmental Economics and Natural Resources Group
+        at Wageningen University & Research. I did fieldwork in Costa Rica, where I interviewed
+        pineapple farmers, researchers, and government officials. I studied the current state
+        of pineapple leaves valorisation in Costa Rica, analyzed the barriers preventing the
+        adoption of valorisation processes and the transition to a circular bioeconomy, and
+        proposed a Facility Location Problem optimization model to improve the current situation.
+      </p>
+
+      <h2>Abstract</h2>
+      <p>
+        The management of pineapple crop residues generates significant environmental and
+        economic costs in Costa Rica. Using these residues to produce value-added products can
+        benefit both the pineapple industry and the circular bioeconomy. Although several
+        valorisation options have been studied, none have been implemented on a large scale.
+        This study presents the state-of-the-art in the extraction and valorisation of
+        Pineapple Leaves (PAL) in Costa Rica. Using the Fuzzy Cognitive Map method, I analyze
+        the barriers preventing the adoption of valorisation processes and the transition to a
+        circular bioeconomy.To model a potential logistical solution for the valorisation of
+        PAL, I present a Facility Location Problem that optimizes the number and location of
+        valorisation facilities to minimize operational costs.
+      </p>
+      <p>
+        The study shows that unsustainable practices, lack of collaboration, and insufficient
+        funding are the main barriers to circular-oriented innovation in the industry.
+        Additionally, operational and technological challenges, particularly related to the
+        extraction of PAL from the field, hinder progress toward large-scale solutions.
+        Government agencies can be potential drivers of change, and there is a need for
+        transparency and knowledge sharing. Raising awareness of the benefits of valorising PAL
+        is essential to motivate investors.
+      </p>
+      <p>
+        A decentralized valorisation operation is more suitable for biogas production,
+        considering the spatial distribution of pineapple fields in Costa Rica and the
+        processing capacity of biogas plants. The model presented can be used to analyze the
+        most cost-effective operational solutions for different types of valorisation
+        techniques, including cascaded solutions.
+      </p>
+
+      <figure>
+        <figcaption>
+          Figure 1. Spatial representation of the optimal solution for the FLP.
+        </figcaption>
+        <img src={resultsImage.src} alt="Spatial representation of the optimal solution for the FLP." />
+      </figure>
+
+      <figure>
+        <figcaption>
+          Figure 2. Example statement processing to build FCM concepts and connections.
+        </figcaption>
+        <img src={processImage.src} alt="Example statement processing to build FCM concepts and connections" />
+      </figure>
+
+      <p><a href={thesisPdf} download="MScThesis">Download thesis in PDF</a></p>
+      <iframe class="pdf-viewer" src={thesisEmbedUrl} title="MSc Thesis"></iframe>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  figure {
+    margin: 3rem 0;
+  }
+
+  figcaption {
+    margin-bottom: 0.75rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .pdf-viewer {
+    display: block;
+    width: 100%;
+    min-height: 31.25rem;
+    border: 1px solid var(--line);
+  }
+</style>
