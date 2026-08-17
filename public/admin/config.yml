@@ -42,4 +42,4 @@ collections:
       - label: Text
         name: body
         widget: markdown
-        hint: 'Paste the poem or excerpt here. Line breaks will be preserved on the site.'
+        hint: 'Paste the text here. Line breaks will be preserved on the site.'

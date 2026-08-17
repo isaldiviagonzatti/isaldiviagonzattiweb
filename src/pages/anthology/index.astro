@@ -6,14 +6,70 @@ const entries = (await getCollection('anthology')).sort((a, b) =>
   a.data.title.localeCompare(b.data.title, undefined, { sensitivity: 'base' })
 );
 
-const items = await Promise.all(
-  entries.map(async (entry) => {
-    const { Content } = await render(entry);
-    return { entry, Content };
+const authorVariants = new Map<string, Map<string, number>>();
+
+function normalizeAuthorWhitespace(author: string) {
+  return author.trim().replace(/\s+/g, ' ');
+}
+
+function authorKey(author: string) {
+  return normalizeAuthorWhitespace(author).normalize('NFC').toLocaleLowerCase();
+}
+
+for (const entry of entries) {
+  for (const author of entry.data.authors) {
+    const normalizedAuthor = normalizeAuthorWhitespace(author);
+    const key = authorKey(normalizedAuthor);
+    const variants = authorVariants.get(key) ?? new Map<string, number>();
+    variants.set(normalizedAuthor, (variants.get(normalizedAuthor) ?? 0) + 1);
+    authorVariants.set(key, variants);
+  }
+}
+
+function casingScore(value: string) {
+  const letters = [...value].filter((character) =>
+    character.toLocaleLowerCase() !== character.toLocaleUpperCase()
+  );
+  const uppercase = letters.filter((character) => character === character.toLocaleUpperCase()).length;
+  const lowercase = letters.length - uppercase;
+
+  return {
+    mixedCase: uppercase > 0 && lowercase > 0 ? 1 : 0,
+    uppercase
+  };
+}
+
+const canonicalAuthors = new Map(
+  [...authorVariants].map(([key, variants]) => {
+    const canonical = [...variants].sort(([nameA, countA], [nameB, countB]) => {
+      if (countA !== countB) return countB - countA;
+
+      const scoreA = casingScore(nameA);
+      const scoreB = casingScore(nameB);
+      if (scoreA.mixedCase !== scoreB.mixedCase) return scoreB.mixedCase - scoreA.mixedCase;
+      return scoreB.uppercase - scoreA.uppercase;
+    })[0][0];
+
+    return [key, canonical];
   })
 );
 
-const authors = [...new Set(entries.flatMap((entry) => entry.data.authors))].sort((a, b) =>
+function canonicalizeAuthor(author: string) {
+  return canonicalAuthors.get(authorKey(author)) ?? normalizeAuthorWhitespace(author);
+}
+
+const items = await Promise.all(
+  entries.map(async (entry) => {
+    const { Content } = await render(entry);
+    return {
+      entry,
+      Content,
+      authors: entry.data.authors.map(canonicalizeAuthor)
+    };
+  })
+);
+
+const authors = [...new Set(items.flatMap((item) => item.authors))].sort((a, b) =>
   a.localeCompare(b, undefined, { sensitivity: 'base' })
 );
 
@@ -71,13 +127,13 @@ function sourceWorkTitle(title: string) {
   </div>
 
   <div id="anthology-list" class="anthology-list">
-    {items.map(({ entry, Content }) => {
+    {items.map(({ entry, Content, authors: entryAuthors }) => {
       const sourceWork = sourceWorkTitle(entry.data.title);
 
       return (
         <details
           class="anthology-entry"
-          data-authors={entry.data.authors.join('|')}
+          data-authors={entryAuthors.join('|')}
         >
           <summary>
             <span class="entry-title">
@@ -85,7 +141,7 @@ function sourceWorkTitle(title: string) {
                 ? <>{sourceWork.prefix}<em>{sourceWork.work}</em></>
                 : entry.data.title}
             </span>
-            <span class="entry-author">{entry.data.authors.join(' & ')}</span>
+            <span class="entry-author">{entryAuthors.join(' & ')}</span>
           </summary>
           <div class="entry-body prose">
             <Content />
