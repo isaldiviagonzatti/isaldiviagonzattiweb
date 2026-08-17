@@ -1,5 +1,5 @@
 ---
-title: "Writing tips for researchers"
+title: "Writing and presenting tips for researchers"
 description: "Guide based on John H. Cochrane's \"Writing tips for Ph.D. students\" (2005), with modifications."
 date: 2024-12-20
 author: "Ignacio Saldivia Gonzatti"

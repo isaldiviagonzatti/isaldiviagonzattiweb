@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: isaldiviagonzatti/isaldiviagonzattiweb
+  branch: main
+  auth_methods: [oauth]
+  commit_messages:
+    create: 'Add anthology entry "{{slug}}"'
+    update: 'Update anthology entry "{{slug}}"'
+    delete: 'Delete anthology entry "{{slug}}"'
+
+media_folder: /public/uploads
+public_folder: /uploads
+
+collections:
+  - name: anthology
+    label: Anthology
+    label_singular: Entry
+    folder: /content/anthology
+    create: true
+    delete: true
+    identifier_field: title
+    summary: '{{title}} — {{authors}}'
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: 'For excerpts, write “From Book Title”; the site will italicize the book title.'
+      - label: Authors
+        label_singular: Author
+        name: authors
+        widget: list
+        min: 1
+        field:
+          label: Author
+          name: author
+          widget: string
+      - label: Text
+        name: body
+        widget: markdown
+        hint: 'Paste the poem or excerpt here. Line breaks will be preserved on the site.'
