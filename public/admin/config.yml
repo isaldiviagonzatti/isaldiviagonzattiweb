@@ -6,9 +6,9 @@ backend:
   branch: main
   auth_methods: [oauth]
   commit_messages:
-    create: 'Add anthology entry "{{slug}}"'
-    update: 'Update anthology entry "{{slug}}"'
-    delete: 'Delete anthology entry "{{slug}}"'
+    create: 'Add {{collection}} entry "{{slug}}"'
+    update: 'Update {{collection}} entry "{{slug}}"'
+    delete: 'Delete {{collection}} entry "{{slug}}"'
 
 media_folder: /public/uploads
 public_folder: /uploads
@@ -43,3 +43,35 @@ collections:
         name: body
         widget: markdown
         hint: 'Paste the text here. Line breaks will be preserved on the site.'
+
+  - name: notes
+    label: Notes
+    label_singular: Note
+    folder: /content/notes
+    create: true
+    delete: true
+    identifier_field: title
+    summary: '{{title}} — {{date}}'
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: description
+        widget: text
+        hint: A short summary shown on the Notes page and used in page metadata.
+      - label: Date
+        name: date
+        widget: datetime
+        type: date
+        default: '{{now}}'
+      - label: Author
+        name: author
+        widget: hidden
+        default: Ignacio Saldivia Gonzatti
+      - label: Content
+        name: body
+        widget: markdown
