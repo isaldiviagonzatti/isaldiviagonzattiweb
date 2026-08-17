@@ -1,26 +1,23 @@
 ---
-title: Viceversa
+title: "Viceversa"
 authors:
-- Mario Benedetti
-date: '2025-01-01'
-type: poem
+  - "Mario Benedetti"
 ---
-
 Tengo miedo de verte  
 necesidad de verte  
 esperanza de verte  
 desazones de verte  
-  
+
 tengo ganas de hallarte  
 preocupación de hallarte  
 certidumbre de hallarte  
 pobres dudas de hallarte  
-  
+
 tengo urgencia de oírte  
 alegría de oírte  
 buena suerte de oírte  
 y temores de oírte  
-  
+
 o sea  
 resumiendo  
 estoy jodido  
@@ -28,4 +25,4 @@ y radiante
 quizá más lo primero  
 que lo segundo  
 y también  
-viceversa.
+viceversa.  

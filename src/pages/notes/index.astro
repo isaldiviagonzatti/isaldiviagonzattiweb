@@ -1,15 +1,17 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const notes = [
-  {
-    date: '3 October 2023',
-    title: 'MSc Thesis',
-    description:
-      'Study of the Current State of Pineapple Leaves Valorisation in the Context of Circular Bioeconomy in Costa Rica',
-    href: '/project/thesismsc/'
-  }
-];
+const notes = (await getCollection('notes')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const formatDate = (date: Date) => new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC'
+}).format(date);
 ---
 
 <BaseLayout title="Notes" description="Notes by Ignacio Saldivia Gonzatti">
@@ -20,9 +22,9 @@ const notes = [
   <ol class="notes-list">
     {notes.map((note) => (
       <li>
-        <p class="note-date">{note.date}</p>
-        <h2><a href={note.href}>{note.title}</a></h2>
-        <p>{note.description}</p>
+        <p class="note-date">{formatDate(note.data.date)}</p>
+        <h2><a href={`/notes/${note.id}/`}>{note.data.title}</a></h2>
+        <p>{note.data.description}</p>
       </li>
     ))}
   </ol>
@@ -33,12 +35,11 @@ const notes = [
     margin: 0;
     padding: 0;
     list-style: none;
-    border-top: 1px solid var(--ink);
   }
 
   .notes-list li {
     padding-block: 2rem;
-    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
   }
 
   .notes-list h2 {

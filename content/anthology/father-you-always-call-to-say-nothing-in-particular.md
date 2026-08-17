@@ -1,9 +1,6 @@
 ---
-title: father, you always call to say nothing in particular.
+title: "Father, you always call to say nothing in particular"
 authors:
-- Rupi Kaur
-date: '2025-01-01'
-type: poem
+  - "Rupi Kaur"
 ---
-
-father. you always call to say nothing in particular. you ask what i'm doing or where i am and when the silence stretches like a lifetime between us i scramble to find questions to keep the conversation going. what i long to say most is. i understand this world broke you. it has been so hard on your feet. i don't blame you for not knowing how to remain soft with me. sometimes i stay up thinking of all the places you are hurting which you'll never care to mention. i come from the same aching blood. from the same bone so desperate for attention i collapse in on myself. i am your daughter. i know the small talk is the only way you know how to tell me you love me. cause it is the only way I know how to tell you.
+Father, you always call to say nothing in particular. You ask what I’m doing or where I am and when the silence stretches like a lifetime between us I scramble to find questions to keep the conversation going. What I long to say most is. I understand this world broke you. It has been so hard on your feet. I don’t blame you for not knowing how to remain soft with me. Sometimes I stay up thinking of all the places you are hurting which you’ll never care to mention. I come from the same aching blood. From the same bone so desperate for attention. I collapse in on myself. I am your daughter. I know the small talk is the only way you know how to tell me you love me. Cause it is the only way I know how to tell you.  

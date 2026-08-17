@@ -1,11 +1,8 @@
 ---
-title: Lluvia
+title: "Lluvia"
 authors:
-- Juan Gelman
-date: '2025-01-01'
-type: poem
+  - "Juan Gelman"
 ---
-
 hoy llueve mucho, mucho,  
 y pareciera que están lavando el mundo  
 mi vecino de al lado mira la lluvia  
@@ -37,4 +34,4 @@ como el silencio que hay entre dos rosas/
 o como yo/que escribo palabras para volver  
 a mi vecino que mira la lluvia/  
 a la lluvia/  
-a mi corazón desterrado/
+a mi corazón desterrado/  

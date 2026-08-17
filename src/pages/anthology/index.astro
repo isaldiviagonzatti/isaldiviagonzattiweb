@@ -16,7 +16,11 @@ const items = await Promise.all(
 const authors = [...new Set(entries.flatMap((entry) => entry.data.authors))].sort((a, b) =>
   a.localeCompare(b, undefined, { sensitivity: 'base' })
 );
-const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
+
+function sourceWorkTitle(title: string) {
+  const match = title.match(/^(.*?\bfrom\s+)(.+)$/i);
+  return match ? { prefix: match[1], work: match[2] } : null;
+}
 ---
 
 <BaseLayout title="Anthology" description="A personal collection of poems, excerpts, and other writing." wide>
@@ -28,24 +32,37 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
   </header>
 
   <div class="filters" aria-label="Filter anthology">
-    <label>
-      <span>Search</span>
+    <label class="filter-field">
+      <span class="filter-label">Search</span>
       <input id="anthology-search" type="search" placeholder="Title, author, or words" autocomplete="off" />
     </label>
-    <label>
-      <span>Author</span>
-      <select id="anthology-author">
-        <option value="">All authors</option>
-        {authors.map((author) => <option value={author}>{author}</option>)}
-      </select>
-    </label>
-    <label>
-      <span>Type</span>
-      <select id="anthology-type">
-        <option value="">All types</option>
-        {types.map((type) => <option value={type}>{type}</option>)}
-      </select>
-    </label>
+    <div class="filter-field">
+      <span id="anthology-author-heading" class="filter-label">Author</span>
+      <details id="anthology-author" class="author-filter">
+        <summary aria-labelledby="anthology-author-heading anthology-author-label">
+          <span id="anthology-author-label" aria-live="polite">All authors</span>
+        </summary>
+        <div class="author-options">
+          <input
+            id="anthology-author-search"
+            class="author-search"
+            type="search"
+            placeholder="Find an author"
+            aria-label="Filter authors"
+            autocomplete="off"
+          />
+          <div class="author-options-list">
+            {authors.map((author) => (
+              <label data-author={author}>
+                <input type="checkbox" value={author} />
+                <span>{author}</span>
+              </label>
+            ))}
+          </div>
+          <p id="anthology-author-empty" class="author-empty" hidden>No authors found.</p>
+        </div>
+      </details>
+    </div>
     <button id="anthology-reset" type="button">Reset</button>
   </div>
 
@@ -54,35 +71,50 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
   </div>
 
   <div id="anthology-list" class="anthology-list">
-    {items.map(({ entry, Content }) => (
-      <details
-        class="anthology-entry"
-        data-authors={entry.data.authors.join('|')}
-        data-type={entry.data.type}
-      >
-        <summary>
-          <span class="entry-title">{entry.data.title}</span>
-          <span class="entry-author">{entry.data.authors.join(' & ')}</span>
-        </summary>
-        <div class="entry-body prose">
-          <Content />
-          {(entry.data.work || entry.data.year) && (
-            <dl class="entry-meta">
-              {entry.data.work && <><dt>Work</dt><dd>{entry.data.work}</dd></>}
-              {entry.data.year && <><dt>Year</dt><dd>{entry.data.year}</dd></>}
-            </dl>
-          )}
-        </div>
-      </details>
-    ))}
+    {items.map(({ entry, Content }) => {
+      const sourceWork = sourceWorkTitle(entry.data.title);
+
+      return (
+        <details
+          class="anthology-entry"
+          data-authors={entry.data.authors.join('|')}
+        >
+          <summary>
+            <span class="entry-title">
+              {sourceWork
+                ? <>{sourceWork.prefix}<em>{sourceWork.work}</em></>
+                : entry.data.title}
+            </span>
+            <span class="entry-author">{entry.data.authors.join(' & ')}</span>
+          </summary>
+          <div class="entry-body prose">
+            <Content />
+            {(entry.data.work || entry.data.year) && (
+              <dl class="entry-meta">
+                {entry.data.work && <><dt>Work</dt><dd>{entry.data.work}</dd></>}
+                {entry.data.year && <><dt>Year</dt><dd>{entry.data.year}</dd></>}
+              </dl>
+            )}
+          </div>
+        </details>
+      );
+    })}
   </div>
 
   <p id="anthology-empty" class="empty-message" hidden>No entries match those filters.</p>
 
   <script>
     const search = document.querySelector<HTMLInputElement>('#anthology-search');
-    const author = document.querySelector<HTMLSelectElement>('#anthology-author');
-    const type = document.querySelector<HTMLSelectElement>('#anthology-type');
+    const authorFilter = document.querySelector<HTMLDetailsElement>('#anthology-author');
+    const authorLabel = document.querySelector<HTMLElement>('#anthology-author-label');
+    const authorSearch = document.querySelector<HTMLInputElement>('#anthology-author-search');
+    const authorOptionLabels = [
+      ...document.querySelectorAll<HTMLElement>('#anthology-author [data-author]')
+    ];
+    const authorEmpty = document.querySelector<HTMLElement>('#anthology-author-empty');
+    const authorInputs = [
+      ...document.querySelectorAll<HTMLInputElement>('#anthology-author input[type="checkbox"]')
+    ];
     const reset = document.querySelector<HTMLButtonElement>('#anthology-reset');
     const count = document.querySelector<HTMLElement>('#anthology-count');
     const empty = document.querySelector<HTMLElement>('#anthology-empty');
@@ -91,22 +123,44 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
     const normalize = (value: string) =>
       value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 
+    const filterAuthorOptions = () => {
+      const query = normalize(authorSearch?.value ?? '');
+      let visible = 0;
+
+      authorOptionLabels.forEach((label) => {
+        const matches = !query || normalize(label.dataset.author ?? '').includes(query);
+        label.hidden = !matches;
+        if (matches) visible += 1;
+      });
+
+      if (authorEmpty) authorEmpty.hidden = visible !== 0;
+    };
+
+    const updateAuthorLabel = () => {
+      if (!authorLabel) return;
+      const selected = authorInputs.filter((input) => input.checked);
+      authorLabel.textContent = selected.length === 0
+        ? 'All authors'
+        : selected.length === 1
+          ? selected[0].value
+          : `${selected.length} authors selected`;
+    };
+
     const update = () => {
-      if (!search || !author || !type || !count || !empty) return;
+      if (!search || !count || !empty) return;
 
       const query = normalize(search.value);
-      const selectedAuthor = normalize(author.value);
-      const selectedType = normalize(type.value);
+      const selectedAuthors = authorInputs
+        .filter((input) => input.checked)
+        .map((input) => normalize(input.value));
       let visible = 0;
 
       entries.forEach((entry) => {
         const entryAuthors = normalize(entry.dataset.authors ?? '').split('|');
-        const entryType = normalize(entry.dataset.type ?? '');
         const text = normalize(entry.textContent ?? '');
         const matches =
           (!query || text.includes(query)) &&
-          (!selectedAuthor || entryAuthors.includes(selectedAuthor)) &&
-          (!selectedType || entryType === selectedType);
+          (selectedAuthors.length === 0 || selectedAuthors.some((author) => entryAuthors.includes(author)));
 
         entry.hidden = !matches;
         if (matches) visible += 1;
@@ -114,18 +168,45 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
 
       count.textContent = `${visible} ${visible === 1 ? 'entry' : 'entries'}`;
       empty.hidden = visible !== 0;
+      updateAuthorLabel();
     };
 
     search?.addEventListener('input', update);
-    author?.addEventListener('change', update);
-    type?.addEventListener('change', update);
+    authorSearch?.addEventListener('input', filterAuthorOptions);
+    authorInputs.forEach((input) => input.addEventListener('change', update));
     reset?.addEventListener('click', () => {
-      if (!search || !author || !type) return;
+      if (!search) return;
       search.value = '';
-      author.value = '';
-      type.value = '';
+      authorInputs.forEach((input) => {
+        input.checked = false;
+      });
+      if (authorSearch) authorSearch.value = '';
+      filterAuthorOptions();
+      if (authorFilter) authorFilter.open = false;
       update();
       search.focus();
+    });
+
+    document.addEventListener('click', (event) => {
+      if (authorFilter?.open && event.target instanceof Node && !authorFilter.contains(event.target)) {
+        authorFilter.open = false;
+      }
+    });
+
+    authorFilter?.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      authorFilter.open = false;
+      authorFilter.querySelector('summary')?.focus();
+    });
+
+    authorFilter?.addEventListener('toggle', () => {
+      if (authorFilter.open) {
+        requestAnimationFrame(() => authorSearch?.focus());
+        return;
+      }
+
+      if (authorSearch) authorSearch.value = '';
+      filterAuthorOptions();
     });
   </script>
 </BaseLayout>
@@ -140,23 +221,23 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
 
   .filters {
     display: grid;
-    grid-template-columns: minmax(13rem, 2fr) minmax(10rem, 1fr) minmax(8rem, 0.7fr) auto;
+    grid-template-columns: minmax(13rem, 2fr) minmax(10rem, 1fr) auto;
     align-items: end;
     gap: 1rem;
     padding: 0 0 1.5rem;
     border-bottom: 1px solid var(--line);
   }
 
-  .filters label span {
+  .filter-label {
     display: block;
     margin-bottom: 0.35rem;
     font-size: 0.75rem;
     font-weight: 700;
   }
 
-  .filters input,
-  .filters select,
-  .filters button {
+  .filter-field > input,
+  .author-filter summary,
+  .filters > button {
     width: 100%;
     min-height: 2.75rem;
     padding: 0.55rem 0.65rem;
@@ -165,18 +246,117 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
     background: var(--paper);
   }
 
-  .filters input:focus,
-  .filters select:focus,
-  .filters button:focus {
+  .filter-field > input:focus,
+  .author-filter summary:focus,
+  .filters > button:focus {
     border-color: var(--ink);
     outline: 1px solid var(--ink);
     outline-offset: 1px;
   }
 
-  .filters button {
+  .filters > button {
     width: auto;
     border-color: var(--ink);
     cursor: pointer;
+  }
+
+  .author-filter {
+    position: relative;
+  }
+
+  .author-filter summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .author-filter summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .author-filter summary::after {
+    content: '⌄';
+    flex: none;
+    color: var(--muted);
+  }
+
+  .author-filter[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .author-options {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    right: 0;
+    left: 0;
+    z-index: 5;
+    padding: 0.45rem;
+    border: 1px solid var(--line);
+    background: var(--paper);
+  }
+
+  .author-search {
+    width: 100%;
+    min-height: 2.5rem;
+    margin-bottom: 0.35rem;
+    padding: 0.45rem 0.55rem;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--paper);
+  }
+
+  .author-search:focus {
+    border-color: var(--ink);
+    outline: 1px solid var(--ink);
+    outline-offset: 1px;
+  }
+
+  .filters input[type="search"]::-webkit-search-cancel-button {
+    width: 0.85rem;
+    height: 0.85rem;
+    background:
+      linear-gradient(45deg, transparent 43%, var(--ink) 43%, var(--ink) 57%, transparent 57%),
+      linear-gradient(-45deg, transparent 43%, var(--ink) 43%, var(--ink) 57%, transparent 57%);
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+  .author-options-list {
+    max-height: 17rem;
+    overflow-y: auto;
+  }
+
+  .author-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.4rem;
+    cursor: pointer;
+  }
+
+  .author-options label:hover {
+    background: var(--soft);
+  }
+
+  .author-options label[hidden] {
+    display: none;
+  }
+
+  .author-options input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    flex: none;
+    accent-color: var(--ink);
+  }
+
+  .author-empty {
+    margin: 0;
+    padding: 0.65rem 0.4rem;
+    color: var(--muted);
+    font-size: 0.85rem;
   }
 
   .result-line {
@@ -226,6 +406,10 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
     font-weight: 650;
   }
 
+  .entry-title em {
+    font-weight: inherit;
+  }
+
   .entry-author {
     color: var(--muted);
   }
@@ -237,6 +421,16 @@ const types = [...new Set(entries.map((entry) => entry.data.type))].sort();
 
   .entry-body :global(p:last-child) {
     margin-bottom: 0;
+  }
+
+  .entry-body :global(.verse-layout) {
+    max-width: 100%;
+    margin: 0;
+    overflow-x: auto;
+    color: inherit;
+    font: inherit;
+    line-height: 1.8;
+    white-space: pre-wrap;
   }
 
   .entry-meta {

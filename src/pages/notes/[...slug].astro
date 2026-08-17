@@ -1,0 +1,58 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+
+  return notes.map((note) => ({
+    params: { slug: note.id },
+    props: { note }
+  }));
+}
+
+interface Props {
+  note: CollectionEntry<'notes'>;
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+const formattedDate = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC'
+}).format(note.data.date);
+---
+
+<BaseLayout title={note.data.title} description={note.data.description}>
+  <article>
+    <header class="page-header note-header">
+      <h1>{note.data.title}</h1>
+      <p class="lede">{note.data.description}</p>
+      <p class="note-meta">
+        {note.data.author} · {formattedDate}
+        {note.data.email && <> · <a href={`mailto:${note.data.email}`}>{note.data.email}</a></>}
+      </p>
+    </header>
+
+    <div class="prose note-content">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .note-header h1 {
+    max-width: 18ch;
+  }
+
+  .note-meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .note-content {
+    max-width: 45rem;
+  }
+</style>

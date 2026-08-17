@@ -1,30 +1,25 @@
 ---
-title: Riverbank
+title: "Riverbank"
 authors:
-- CHI LECHUAN
-date: '2025-01-01'
-type: poem
+  - "CHI LECHUAN"
 ---
+One white, one red, one black  
+Three horses are drinking at the riverbank  
 
-(Translated from the Chinese)
+They drink at their own pace, some up  
+Some down  
+Sometimes their heads reach the river  
 
-One white, one red, one black
-Three horses are drinking at the riverbank
+At the same time  
 
-They drink at their own pace, some up
-Some down
-Sometimes their heads reach the river
+As if a river were flowing  
+Out of their mouths  
 
-At the same time
+As their minds flow from the river source  
+Still innocent, clear, undisturbed  
 
-As if a river were flowing
-Out of their mouths
+The sun is setting slowly  
+A man watches, without blinking  
 
-As their minds flow from the river source
-Still innocent, clear, undisturbed
-
-The sun is setting slowly
-A man watches, without blinking
-
-How a river disappears into the night
-Held in the mouths of three horses
+How a river disappears into the night  
+Held in the mouths of three horses  
