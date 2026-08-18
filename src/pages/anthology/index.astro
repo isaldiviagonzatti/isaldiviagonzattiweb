@@ -132,6 +132,7 @@ function sourceWorkTitle(title: string) {
 
       return (
         <details
+          id={entry.id}
           class="anthology-entry"
           data-authors={entryAuthors.join('|')}
         >
@@ -176,6 +177,26 @@ function sourceWorkTitle(title: string) {
     const empty = document.querySelector<HTMLElement>('#anthology-empty');
     const entries = [...document.querySelectorAll<HTMLDetailsElement>('.anthology-entry')];
 
+    const entryUrl = (entryId: string) => {
+      const url = new URL(window.location.href);
+      url.hash = entryId;
+      return url;
+    };
+
+    const revealLinkedEntry = () => {
+      const entryId = decodeURIComponent(window.location.hash.slice(1));
+      if (!entryId) return;
+
+      const linkedEntry = document.getElementById(entryId);
+      if (!(linkedEntry instanceof HTMLDetailsElement) || !linkedEntry.classList.contains('anthology-entry')) {
+        return;
+      }
+
+      if (linkedEntry.hidden) return;
+      linkedEntry.open = true;
+      requestAnimationFrame(() => linkedEntry.scrollIntoView({ block: 'start' }));
+    };
+
     const normalize = (value: string) =>
       value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 
@@ -202,6 +223,31 @@ function sourceWorkTitle(title: string) {
           : `${selected.length} authors selected`;
     };
 
+    const updateUrlFromFilters = () => {
+      if (!search) return;
+
+      const url = new URL(window.location.href);
+      const query = search.value.trim();
+
+      if (query) {
+        url.searchParams.set('q', query);
+      } else {
+        url.searchParams.delete('q');
+      }
+
+      url.searchParams.delete('author');
+      authorInputs
+        .filter((input) => input.checked)
+        .forEach((input) => url.searchParams.append('author', input.value));
+
+      const linkedEntry = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+      if (linkedEntry instanceof HTMLDetailsElement && linkedEntry.hidden) {
+        url.hash = '';
+      }
+
+      window.history.replaceState(null, '', url);
+    };
+
     const update = () => {
       if (!search || !count || !empty) return;
 
@@ -225,11 +271,12 @@ function sourceWorkTitle(title: string) {
       count.textContent = `${visible} ${visible === 1 ? 'entry' : 'entries'}`;
       empty.hidden = visible !== 0;
       updateAuthorLabel();
+      updateUrlFromFilters();
     };
 
-    search?.addEventListener('input', update);
+    search?.addEventListener('input', () => update());
     authorSearch?.addEventListener('input', filterAuthorOptions);
-    authorInputs.forEach((input) => input.addEventListener('change', update));
+    authorInputs.forEach((input) => input.addEventListener('change', () => update()));
     reset?.addEventListener('click', () => {
       if (!search) return;
       search.value = '';
@@ -241,6 +288,20 @@ function sourceWorkTitle(title: string) {
       if (authorFilter) authorFilter.open = false;
       update();
       search.focus();
+    });
+
+    entries.forEach((entry) => {
+      entry.addEventListener('toggle', () => {
+        const currentEntryId = decodeURIComponent(window.location.hash.slice(1));
+
+        if (entry.open) {
+          window.history.replaceState(null, '', entryUrl(entry.id));
+        } else if (currentEntryId === entry.id) {
+          const url = new URL(window.location.href);
+          url.hash = '';
+          window.history.replaceState(null, '', url);
+        }
+      });
     });
 
     document.addEventListener('click', (event) => {
@@ -264,6 +325,17 @@ function sourceWorkTitle(title: string) {
       if (authorSearch) authorSearch.value = '';
       filterAuthorOptions();
     });
+
+    const urlParameters = new URLSearchParams(window.location.search);
+    if (search) search.value = urlParameters.get('q') ?? '';
+    const selectedAuthors = urlParameters.getAll('author').map(normalize);
+    authorInputs.forEach((input) => {
+      input.checked = selectedAuthors.includes(normalize(input.value));
+    });
+
+    update();
+    window.addEventListener('hashchange', revealLinkedEntry);
+    revealLinkedEntry();
   </script>
 </BaseLayout>
 
@@ -432,6 +504,12 @@ function sourceWorkTitle(title: string) {
 
   .anthology-entry[hidden] {
     display: none;
+  }
+
+  .anthology-entry:target summary {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
   }
 
   .anthology-entry summary {
