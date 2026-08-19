@@ -26,8 +26,6 @@ podrán con mi grito indomable.
 
 ***
 
-INDOMITABLE SCREAM 1
-
 How will they see me as good
 When life in my veins
 Thunders
