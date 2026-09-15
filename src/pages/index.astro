@@ -8,7 +8,7 @@ import avatar from '../assets/avatar.jpg';
 
 <BaseLayout wide>
   <section class="home-hero">
-    <div class="home-image-frame">
+    <figure class="home-image-frame">
       <img
         class="home-image"
         src="/img/myfortressview.jpg"
@@ -16,7 +16,8 @@ import avatar from '../assets/avatar.jpg';
         width="1200"
         height="800"
       />
-    </div>
+      <figcaption class="home-image-credit">Photo: Iván Fraga Martín</figcaption>
+    </figure>
     <div class="home-poem">
       <p class="subtitle">Here, read a poem.</p>
       <blockquote>
@@ -94,7 +95,17 @@ import avatar from '../assets/avatar.jpg';
   .home-image-frame {
     position: relative;
     min-height: 0;
+    margin: 0;
     overflow: hidden;
+  }
+
+  .home-image-credit {
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0.5rem;
+    color: rgb(255 255 255 / 0.85);
+    font-size: 0.6rem;
+    text-shadow: 0 0 4px rgb(0 0 0 / 0.6);
   }
 
   .home-poem {
