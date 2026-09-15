@@ -1,0 +1,14 @@
+---
+title: Hallacas 2005
+authors: [Mary Carmen]
+book: salados
+pages: [87]
+ingredients: [¾ kl de onoto, 2 kls de manteca de cochino (derretida), 21 kls de hojas limpias, 1 kl de pimentón (para el guiso), '1,300 de pimentón para asar (adorno)', 750 grms de tomates perita, 3 kls de pernil, 1 ½ kls de carne de res, 1 ½ kl de costilla de res (para el caldo), 1 gallina (aprox. 3 ½ kls), '1,300 de cebollas', 500 grms de ajos pelados, 4 paquetes de cebollín, 4 paquetes de ajo porro, 1 ½ kl de aceitunas rellenas, 1 ½ kl de jamón cocido, 3 frascos de pepinos de 397 grms (para adorno), 1 ¼ kl de pasas, ¾ kl de alcaparras, 1 ¼ kl de ciruelas sin hueso, 4 botellas de 1 lt (para encurtido), 1 ¼ kl de zanahorias, 1 ½ kl de cebollitas, 1 coliflor, 1 botella de moscatel, ½ botella de vino blanco, 4 paquetes de harina pan de 1 kl (para hallacas), 3 paquetes de harina pan de 1 kl (para bollos), 'Pavilo (1,40 m)', Pan rallado (si el guiso queda aguado)]
+---
+21 bollos picantes, 22 bollos corrientes, 57 hallacas. Se supone que es de diciembre 2005; o sea, tocaba arriba, invertida (se anotó al revés).
+
+¾ kl de onoto en 2 kls de manteca (derretida de cochino, que no hierva la manteca), 21 kls de hojas limpias, 1 kl de pimentón para el guiso, pimentón para asar (adorno), 1,300, tomates perita, 750 grms, pernil, 3 kls, carne de res, 1 ½ kls, 1 ½ kl de costilla de res (caldo), 1 gallina, aprox. 3 ½ kls, cebollas, 1,300, ajos pelados, 500 grms, cebollín, 4 paq, 4 paq de ajo porro, aceitunas rellenas, 1 ½ kl, jamón cocido, 1 ½ kl (entero, luego se pica para adorno), frasco de pepinos (adorno), 3 de 397 grms, pasas, 1 ¼ kl, alcaparras, ¾ kl (licuarlas, al guisado), ciruelas sin hueso, 1 ¼ kl, para encurtido, 4 botellas de 1 lt, 1 ¼ kl de zanahorias, 1 ½ kl de cebollitas, 1 coliflor, para la masa. Caldo, aprox. 9 lts, mitad de la manteca con onoto, 1 botella de moscatel, ½ [botella] de vino blanco.
+
+Guiso, caldo (carne, pernil, etc.); si está aguado, poner pan rallado al final. Harina pan para hallacas, 4 paq de 1 kl; bollos, 3 paq de 1 kl; pavilo, 1,40, para hallacas, 150 grms de masa. Caldo para amasar, aprox. 11 lts; para guisado, 9 litros.
+
+Hacer el caldo con hojas de cebollín, ajo porro, cilantro, etc., costillas de res, etc. Poner las carnes: primero la de res, luego el pernil y la gallina; se van sacando, no deben tener sangre pero tampoco quedar muy cocinadas; también el jamón. El caldo para el guisado, fuerte; el caldo para amasar, liviano. El caldo para José Ricardo, sin gallina. Yo pongo las cebollas, etc., en crudo, y por la licuadora (no sofrío) la salsa; cuando reduce a la tercera parte, se le agregan la manteca (la mitad) y las carnes picadas pequeñas, alcaparras molidas en licuadora, etc., vino, cilantro, poco de encurtido picado. Las carnes nooo deben cocinar mucho.

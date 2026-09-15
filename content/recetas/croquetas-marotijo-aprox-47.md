@@ -1,0 +1,12 @@
+---
+title: Croquetas, Marotijo (aprox. 47)
+authors: [Mary Carmen]
+book: dulces
+pages: [80]
+ingredients: ['1 kilo de jamón cocido, picado menudo', '3 dientes de ajo grandes, picados menudo', '1 cebolla grande, picada menudo', 2 cucharaditas de sal, 3 cucharadas soperas de perejil picadito, 1 cucharada sopera de cilantro picadito, '3 cucharadas soperas de mantequilla, para freír', '2 ½ tazas de harina, con copete', '¾ taza de leche líquida, tibia', 'Pimienta (poca, si gusta)', Nuez moscada (si gusta), Pan rallado, 'Leche y huevos batidos, para rebozar', 'Aceite, para freír']
+---
+Jamón cocido, 1 kilo, picado menudo; 3 dientes de ajo grandes, picados menudo; 1 cebolla grande, picada menudo; 2 cucharaditas de sal; 3 cucharadas soperas de perejil picadito; 1 cucharada sopera de cilantro picadito; 3 cucharadas soperas de mantequilla, para freír ajos, cebolla, y luego perejil y cilantro. 2 ½ tazas de harina, con copete. ¾ taza de leche líquida, tibia. Esta es la crema bechamel, base para hacer las croquetas. Estas son las cantidades, no tan exactas como las de una torta; por lo tanto, al hacer la crema, si queda aguada, más harina; si queda muy espesa, más leche tibia, no queda otra.
+
+Sofreír ajos y cebolla en mantequilla; al dorar, añadir perejil y cilantro. Sacar y reservar. Se pone una olla con la leche; al estar tibia, añadir poco a poco la harina y mover muy rápido con cuchara de madera (hay quien pone esto al revés: primero la harina, y va añadiendo poco a poco la leche). Hay que mezclar rápido y mover rápido con la cuchara, para que no se hagan grumos, es muy importante. La sal, poco de pimienta si gusta, nuez moscada. Cuando vaya cuajando, se le añade la cebolla, ajos, etc., y por último el jamón picadito (antes de poner el sofrito de cebollas, si la harina hubiera hecho grumos, se saca, se pasa por un colador o pasa-verduras, por lo menos 2 o 3 veces, hasta que quede bien, y otra vez se le añade la cebollita, perejil, etc.).
+
+Esta crema debe "endurecer", que en el fondo de la olla se haga una capa muy fina, pero que la masa esté despegada y endurecida. Se pone en bandeja plana, a la nevera, por unas 24 horas. Envoltura: freír en sartén con mucho aceite caliente. Un plato con pan rallado, otro con leche y huevos batidos; se pasa por pan rallado, leche y pan otra vez. Se les da la forma ovalada. Fastidiosita la receta, pero cuando se hace varias veces, vale la pena, quedan divinas... digo yooo.

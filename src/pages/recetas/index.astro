@@ -1,0 +1,565 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const books = {
+  dulces: 'Dulces',
+  salados: 'Salados',
+  adicionales: 'Adicionales'
+} as const;
+
+const entries = (await getCollection('recetas')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title, 'es', { sensitivity: 'base' })
+);
+
+const items = await Promise.all(
+  entries.map(async (entry) => {
+    const { Content } = await render(entry);
+    const ingredients = entry.data.ingredients;
+    const groups = ingredients.length > 0 && typeof ingredients[0] === 'string'
+      ? [{ group: '', items: ingredients as string[] }]
+      : (ingredients as { group: string; items: string[] }[]);
+    return { entry, Content, groups };
+  })
+);
+
+const scanUrl = (book: string, page: number) =>
+  `/recetas/scans/${book}/page-${String(page).padStart(3, '0')}.webp`;
+---
+
+<BaseLayout title="Recetas" wide>
+  <div lang="es">
+    <header class="page-header recipes-header">
+      <div>
+        <h1>Recetas de una sola</h1>
+      </div>
+      <figure class="recipes-intro">
+        <img src="/recetas/intro.webp" />
+      </figure>
+    </header>
+
+    <div class="filters" aria-label="Filter recipes">
+      <label class="filter-field">
+        <span class="filter-label">Search</span>
+        <input id="recipes-search" type="search" placeholder="Title, ingredient, or words" autocomplete="off" />
+      </label>
+      <label class="filter-field">
+        <span class="filter-label">Category</span>
+        <select id="recipes-book">
+          <option value="">All</option>
+          {Object.entries(books).map(([value, label]) => <option value={value}>{label}</option>)}
+        </select>
+      </label>
+      <button id="recipes-reset" type="button">Clear</button>
+    </div>
+
+    <div class="result-line" aria-live="polite">
+      <span id="recipes-count">{items.length} recipes</span>
+    </div>
+
+    <div id="recipes-list">
+      {items.map(({ entry, Content, groups }) => (
+        <details id={entry.id} class="recipe" data-book={entry.data.book}>
+          <summary>
+            <span class="entry-title">{entry.data.title}</span>
+          </summary>
+          <div class="recipe-body">
+            <div class="recipe-text">
+              {groups.length > 0 && (
+                <section class="ingredients" aria-label="Ingredients">
+                  <h2>Ingredients</h2>
+                  {groups.map(({ group, items: ingredientItems }, groupIndex) => (
+                    <div class="ingredient-group">
+                      {group && <h3>{group}</h3>}
+                      <ul>
+                        {ingredientItems.map((item, itemIndex) => (
+                          <li>
+                            <label>
+                              <input type="checkbox" data-key={`${groupIndex}.${itemIndex}`} />
+                              <span>{item}</span>
+                            </label>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                  <button class="ingredients-clear" type="button" hidden>Clear all</button>
+                </section>
+              )}
+              <div class="prose recipe-prose">
+                <Content />
+              </div>
+              <div class="recipe-footer">
+                <a class="recipe-share" href={`#${entry.id}`}>Share</a>
+              </div>
+            </div>
+            <aside class="scans" aria-label="Original scan">
+              {entry.data.pages.map((page) => (
+                <figure>
+                  <a href={scanUrl(entry.data.book, page)} target="_blank" rel="noopener">
+                    <img
+                      src={scanUrl(entry.data.book, page)}
+                      alt={`Original scan: ${books[entry.data.book]}, page ${page}`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                  <figcaption>{books[entry.data.book]}, p. {page}</figcaption>
+                </figure>
+              ))}
+            </aside>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <p id="recipes-empty" class="empty-message" hidden>No recipes match your search.</p>
+  </div>
+
+  <script>
+    const search = document.querySelector<HTMLInputElement>('#recipes-search');
+    const bookFilter = document.querySelector<HTMLSelectElement>('#recipes-book');
+    const reset = document.querySelector<HTMLButtonElement>('#recipes-reset');
+    const count = document.querySelector<HTMLElement>('#recipes-count');
+    const empty = document.querySelector<HTMLElement>('#recipes-empty');
+    const recipes = [...document.querySelectorAll<HTMLDetailsElement>('.recipe')];
+
+    const normalize = (value: string) =>
+      value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+
+    // Search text is computed once; the scans' captions are left out so "p. 12" doesn't match.
+    const searchText = new Map(
+      recipes.map((recipe) => [
+        recipe,
+        normalize(
+          [...recipe.querySelectorAll('summary, .recipe-text')].map((node) => node.textContent).join(' ')
+        )
+      ])
+    );
+
+    const revealLinkedRecipe = () => {
+      const recipeId = decodeURIComponent(window.location.hash.slice(1));
+      if (!recipeId) return;
+      const linked = document.getElementById(recipeId);
+      if (!(linked instanceof HTMLDetailsElement) || !linked.classList.contains('recipe') || linked.hidden) return;
+      linked.open = true;
+      requestAnimationFrame(() => linked.scrollIntoView({ block: 'start' }));
+    };
+
+    const updateUrlFromFilters = () => {
+      if (!search || !bookFilter) return;
+      const url = new URL(window.location.href);
+      const query = search.value.trim();
+      if (query) url.searchParams.set('q', query);
+      else url.searchParams.delete('q');
+      if (bookFilter.value) url.searchParams.set('carpeta', bookFilter.value);
+      else url.searchParams.delete('carpeta');
+      const linked = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+      if (linked instanceof HTMLDetailsElement && linked.hidden) url.hash = '';
+      window.history.replaceState(null, '', url);
+    };
+
+    const update = () => {
+      if (!search || !bookFilter || !count || !empty) return;
+      const words = normalize(search.value).split(/\s+/).filter(Boolean);
+      const book = bookFilter.value;
+      let visible = 0;
+
+      recipes.forEach((recipe) => {
+        const text = searchText.get(recipe) ?? '';
+        const matches =
+          words.every((word) => text.includes(word)) && (!book || recipe.dataset.book === book);
+        recipe.hidden = !matches;
+        if (matches) visible += 1;
+      });
+
+      count.textContent = `${visible} ${visible === 1 ? 'recipe' : 'recipes'}`;
+      empty.hidden = visible !== 0;
+      updateUrlFromFilters();
+    };
+
+    search?.addEventListener('input', update);
+    bookFilter?.addEventListener('change', update);
+    reset?.addEventListener('click', () => {
+      if (!search || !bookFilter) return;
+      search.value = '';
+      bookFilter.value = '';
+      update();
+      search.focus();
+    });
+
+    recipes.forEach((recipe) => {
+      recipe.addEventListener('toggle', () => {
+        const url = new URL(window.location.href);
+        if (recipe.open) url.hash = recipe.id;
+        else if (decodeURIComponent(url.hash.slice(1)) === recipe.id) url.hash = '';
+        else return;
+        window.history.replaceState(null, '', url);
+      });
+    });
+
+    const shareLinks = [...document.querySelectorAll<HTMLAnchorElement>('.recipe-share')];
+    shareLinks.forEach((link) => {
+      link.addEventListener('click', async (event) => {
+        const recipe = link.closest<HTMLDetailsElement>('.recipe');
+        if (!recipe) return;
+
+        const url = new URL(window.location.href);
+        url.search = '';
+        url.hash = recipe.id;
+        const title = recipe.querySelector('.entry-title')?.textContent?.trim() ?? 'Receta';
+
+        if (navigator.share) {
+          event.preventDefault();
+          try {
+            await navigator.share({ title, url: url.href });
+          } catch {
+            // Closing the native share sheet is not an error the visitor needs to see.
+          }
+          return;
+        }
+
+        if (!navigator.clipboard) return;
+        event.preventDefault();
+        try {
+          await navigator.clipboard.writeText(url.href);
+          const label = link.textContent;
+          link.textContent = 'Link copied';
+          window.setTimeout(() => {
+            link.textContent = label;
+          }, 1600);
+        } catch {
+          // If copying is unavailable, the link's regular hash navigation remains usable.
+        }
+      });
+    });
+
+    // Ingredient checkboxes: remembered per recipe in this browser.
+    const storageKey = (recipeId: string) => `receta:${recipeId}`;
+    const readChecked = (recipeId: string): string[] => {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey(recipeId)) ?? '[]');
+      } catch {
+        return [];
+      }
+    };
+    const writeChecked = (recipeId: string, keys: string[]) => {
+      try {
+        if (keys.length) localStorage.setItem(storageKey(recipeId), JSON.stringify(keys));
+        else localStorage.removeItem(storageKey(recipeId));
+      } catch {
+        // Storage unavailable (private mode): the boxes still work, they just aren't remembered.
+      }
+    };
+
+    recipes.forEach((recipe) => {
+      const boxes = [...recipe.querySelectorAll<HTMLInputElement>('.ingredients input[type="checkbox"]')];
+      const clear = recipe.querySelector<HTMLButtonElement>('.ingredients-clear');
+      if (!boxes.length) return;
+
+      const saved = new Set(readChecked(recipe.id));
+      boxes.forEach((box) => {
+        box.checked = saved.has(box.dataset.key ?? '');
+      });
+      const sync = () => {
+        const checked = boxes.filter((box) => box.checked).map((box) => box.dataset.key ?? '');
+        writeChecked(recipe.id, checked);
+        if (clear) clear.hidden = checked.length === 0;
+      };
+      boxes.forEach((box) => box.addEventListener('change', sync));
+      clear?.addEventListener('click', () => {
+        boxes.forEach((box) => {
+          box.checked = false;
+        });
+        sync();
+      });
+      sync();
+    });
+
+    const urlParameters = new URLSearchParams(window.location.search);
+    if (search) search.value = urlParameters.get('q') ?? '';
+    if (bookFilter) {
+      const book = urlParameters.get('carpeta') ?? '';
+      bookFilter.value = [...bookFilter.options].some((option) => option.value === book) ? book : '';
+    }
+
+    update();
+    window.addEventListener('hashchange', revealLinkedRecipe);
+    revealLinkedRecipe();
+  </script>
+</BaseLayout>
+
+<style>
+  .recipes-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 3rem;
+  }
+
+  .recipes-intro {
+    width: min(100%, 32rem);
+    margin: 0;
+    justify-self: end;
+  }
+
+  .recipes-intro img {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--line);
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: minmax(13rem, 2fr) minmax(10rem, 1fr) auto;
+    align-items: end;
+    gap: 1rem;
+    padding: 0 0 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .filter-label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .filter-field > input,
+  .filter-field > select,
+  .filters > button {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.65rem;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: inherit;
+  }
+
+  .filter-field > input:focus,
+  .filter-field > select:focus,
+  .filters > button:focus {
+    border-color: var(--ink);
+    outline: 1px solid var(--ink);
+    outline-offset: 1px;
+  }
+
+  .filters > button {
+    width: auto;
+    border-color: var(--ink);
+    cursor: pointer;
+  }
+
+  .filters input[type="search"]::-webkit-search-cancel-button {
+    width: 0.85rem;
+    height: 0.85rem;
+    background:
+      linear-gradient(45deg, transparent 43%, var(--ink) 43%, var(--ink) 57%, transparent 57%),
+      linear-gradient(-45deg, transparent 43%, var(--ink) 43%, var(--ink) 57%, transparent 57%);
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+  .result-line {
+    padding-block: 0.75rem 1.25rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: right;
+  }
+
+  .recipe + .recipe {
+    margin-top: 0.2rem;
+  }
+
+  .recipe[open] {
+    margin-bottom: 1.5rem;
+  }
+
+  .recipe[hidden] {
+    display: none;
+  }
+
+  .recipe:target summary {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+  }
+
+  .recipe summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1.5rem;
+    column-gap: 1rem;
+    padding-block: 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .recipe summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .recipe summary::before {
+    content: '+';
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: end;
+    font-weight: 400;
+  }
+
+  .recipe[open] summary::before {
+    content: '−';
+  }
+
+  .entry-title {
+    font-weight: 650;
+  }
+
+  .recipe-body {
+    display: grid;
+    grid-template-columns: minmax(0, 44rem) minmax(14rem, 1fr);
+    gap: 3rem;
+    padding: 0.75rem 0 3rem;
+  }
+
+  .ingredients {
+    margin-bottom: 2rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--line);
+  }
+
+  .ingredients h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+  }
+
+  .ingredients h3 {
+    margin: 1rem 0 0.35rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .ingredients ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ingredients label {
+    display: flex;
+    align-items: baseline;
+    gap: 0.65rem;
+    padding-block: 0.25rem;
+    cursor: pointer;
+  }
+
+  .ingredients input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    flex: none;
+    translate: 0 0.15rem;
+    accent-color: var(--ink);
+  }
+
+  .ingredients input:checked + span {
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+
+  .ingredients-clear {
+    margin-top: 0.75rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .recipe-prose :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .recipe-footer {
+    margin-top: 1.25rem;
+  }
+
+  .recipe-share {
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .scans {
+    position: sticky;
+    top: 1rem;
+    display: grid;
+    align-self: start;
+    gap: 1.5rem;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+
+  .scans figure {
+    margin: 0;
+  }
+
+  .scans img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+  }
+
+  .scans figcaption {
+    margin-top: 0.4rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .empty-message {
+    padding-block: 3rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 52rem) {
+    .recipes-header,
+    .filters {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .filters label:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .recipe-body {
+      grid-template-columns: 1fr;
+    }
+
+    .scans {
+      position: static;
+      max-height: none;
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    }
+  }
+
+  @media (max-width: 38rem) {
+    .recipes-header,
+    .filters,
+    .recipe summary {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .recipe summary::before {
+      display: none;
+    }
+
+  }
+</style>
