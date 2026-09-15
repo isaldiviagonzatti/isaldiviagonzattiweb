@@ -30,4 +30,24 @@ const notes = defineCollection({
   })
 });
 
-export const collections = { anthology, notes };
+const recetas = defineCollection({
+  loader: glob({
+    base: './content/recetas',
+    pattern: '[!_]*.md'
+  }),
+  schema: z.object({
+    title: z.string(),
+    authors: z.array(z.string()).min(1),
+    book: z.enum(['dulces', 'salados', 'adicionales']),
+    pages: z.array(z.number().int().positive()).min(1),
+    ingredients: z
+      .union([
+        z.array(z.string()),
+        z.array(z.object({ group: z.string(), items: z.array(z.string()) }))
+      ])
+      .default([]),
+    review: z.string().optional()
+  })
+});
+
+export const collections = { anthology, notes, recetas };
