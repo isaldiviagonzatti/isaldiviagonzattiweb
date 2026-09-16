@@ -10,6 +10,8 @@ export interface Publication {
   doi: string;
   title: string;
   year: number;
+  month: number;
+  day: number;
   authors: PublicationAuthor[];
   journal: string;
   volume: string;

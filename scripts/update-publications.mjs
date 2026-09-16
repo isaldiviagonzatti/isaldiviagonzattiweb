@@ -8,6 +8,10 @@ const OWNER = {
   given: 'Ignacio',
   family: 'Saldivia Gonzatti'
 };
+// Publication dates for DOIs where Crossref lacks the month or day, as [year, month, day].
+const DATE_OVERRIDES = {
+  '10.1039/d5ee04922a': [2026, 5, 26]
+};
 const INCLUDED_TYPES = new Set(['journal-article']);
 const ORCID_WORKS_URL = `https://pub.orcid.org/v3.0/${ORCID_ID}/works`;
 const CROSSREF_WORK_URL = 'https://api.crossref.org/works/';
@@ -136,7 +140,7 @@ function cleanValue(value) {
 function buildPublication(work, crossref) {
   const metadata = crossref.message;
   const doi = getDoi(work);
-  const parts = dateParts(metadata);
+  const parts = DATE_OVERRIDES[doi] ?? dateParts(metadata);
   const year = Number(parts[0] ?? work?.['publication-date']?.year?.value);
   const authors = (metadata.author ?? []).map((author) => {
     const owner = isOwner(author);
@@ -160,6 +164,9 @@ function buildPublication(work, crossref) {
     doi,
     title: cleanValue(work?.title?.title?.value) || cleanValue(metadata.title?.[0]),
     year,
+    // Month and day are only used to order publications within a year.
+    month: Number(parts[1] ?? 0),
+    day: Number(parts[2] ?? 0),
     authors,
     journal: cleanValue(metadata['container-title']?.[0] ?? work?.['journal-title']?.value),
     volume: cleanValue(metadata.volume),
@@ -195,7 +202,10 @@ async function main() {
   }
 
   publications.sort((left, right) => {
-    return right.year - left.year || left.title.localeCompare(right.title, 'en');
+    return right.year - left.year
+      || right.month - left.month
+      || right.day - left.day
+      || left.title.localeCompare(right.title, 'en');
   });
 
   const nextContents = `${JSON.stringify(publications, null, 2)}\n`;
