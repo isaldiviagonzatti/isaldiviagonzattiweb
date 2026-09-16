@@ -114,6 +114,38 @@
     "type": "journal-article"
   },
   {
+    "doi": "10.1088/1748-9326/aea797",
+    "title": "Process-based seasonal crop yield forecasting for early warning in Sub-Saharan Africa",
+    "year": 2026,
+    "authors": [
+      {
+        "given": "Ignacio",
+        "family": "Saldivia Gonzatti",
+        "isOwner": true
+      },
+      {
+        "given": "Christian",
+        "family": "Siderius",
+        "isOwner": false
+      },
+      {
+        "given": "Spyridon",
+        "family": "Paparrizos",
+        "isOwner": false
+      },
+      {
+        "given": "Hester",
+        "family": "Biemans",
+        "isOwner": false
+      }
+    ],
+    "journal": "Environmental Research Letters",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "type": "journal-article"
+  },
+  {
     "doi": "10.1038/s44183-024-00082-6",
     "title": "Strong versus weak sustainable development in the blue economy: a study of 15 EU coastal countries",
     "year": 2024,

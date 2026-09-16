@@ -46,6 +46,28 @@ const navigation = [
       })();
     </script>
     <title>{pageTitle}</title>
+    <script is:inline>
+      // Visit /?notrack to stop GoatCounter counting this browser, /?track to undo.
+      (() => {
+        const params = new URLSearchParams(location.search);
+        if (!params.has('notrack') && !params.has('track')) return;
+        try {
+          if (params.has('notrack')) {
+            localStorage.setItem('skipgc', 't');
+            alert('GoatCounter: visits from this browser are now ignored.');
+          } else {
+            localStorage.removeItem('skipgc');
+            alert('GoatCounter: visits from this browser are counted again.');
+          }
+        } catch {
+          alert('Could not access localStorage in this browser.');
+        }
+        params.delete('notrack');
+        params.delete('track');
+        const query = params.toString();
+        history.replaceState(null, '', location.pathname + (query ? `?${query}` : '') + location.hash);
+      })();
+    </script>
     <script
       is:inline
       data-goatcounter="https://ignaciosg.goatcounter.com/count"
